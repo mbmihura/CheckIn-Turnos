@@ -117,41 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Accion_Aceptar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Accion Aceptar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Accion_Editar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Accion Editar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Accion_Eliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Accion Eliminar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Accion_Nuevo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Accion Nuevo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Contraseña" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Contraseña.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="creditosYLiccencias" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\creditosYLiccencias.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="GrandeCandado" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GrandeCandado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GrandeCandado2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GrandeCandado2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GrandeEditar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GrandeEditar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GrandeElimnar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GrandeElimnar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GrandeNuevo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GrandeNuevo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Turno" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Turno.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>

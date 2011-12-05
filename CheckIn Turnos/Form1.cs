@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace CheckIn_Turnos
 {
-    public partial class Form1 : Form
+    public partial class TurnosForm : Form
     {
-        public Form1()
+        public TurnosForm()
         {
             InitializeComponent();
         }
