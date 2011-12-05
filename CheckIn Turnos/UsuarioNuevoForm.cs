@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace CheckIn_Turnos
 {
-    public partial class UsuarioNuevoController : UsuarioModificarForm
+    public partial class UsuarioNuevoForm : UsuarioModificarForm
     {
-        public UsuarioNuevoController()
+        public UsuarioNuevoForm()
         {
             InitializeComponent();
 

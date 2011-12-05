@@ -1,6 +1,6 @@
 ﻿namespace CheckIn_Turnos
 {
-    partial class UsuarioNuevoController
+    partial class UsuarioNuevoForm
     {
         /// <summary>
         /// Variable del diseñador requerida.
@@ -49,11 +49,11 @@
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             // 
-            // UsuarioNuevoController
+            // UsuarioNuevoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(597, 265);
-            this.Name = "UsuarioNuevoController";
+            this.Name = "UsuarioNuevoForm";
             this.Text = "Usuario Nuevo";
             this.ingresoManual_pnl.ResumeLayout(false);
             this.ingresoManual_pnl.PerformLayout();

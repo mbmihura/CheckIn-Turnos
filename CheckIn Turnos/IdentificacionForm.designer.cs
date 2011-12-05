@@ -1,6 +1,6 @@
 ﻿namespace CheckIn_Turnos
 {
-    partial class IdentificacionController
+    partial class IdentificacionForm
     {
         /// <summary>
         /// Required designer variable.
@@ -100,7 +100,7 @@
             this.candado_pic.TabIndex = 21;
             this.candado_pic.TabStop = false;
             // 
-            // IdentificacionController
+            // IdentificacionForm
             // 
             this.AcceptButton = this.ingresar_cmd;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -116,7 +116,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "IdentificacionController";
+            this.Name = "IdentificacionForm";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Identificacion de Usuario";

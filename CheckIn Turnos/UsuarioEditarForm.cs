@@ -9,11 +9,11 @@ using CheckIn_Turnos.Excepciones;
 
 namespace CheckIn_Turnos
 {
-    public partial class UsuarioEditarController : UsuarioModificarForm
+    public partial class UsuarioEditarForm : UsuarioModificarForm
     {
         string _idUsuario;
 
-        public UsuarioEditarController(string usuario)
+        public UsuarioEditarForm(string usuario)
         {
             _idUsuario = usuario;
             InitializeComponent();

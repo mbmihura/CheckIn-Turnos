@@ -1,6 +1,6 @@
 ﻿namespace CheckIn_Turnos
 {
-    partial class UsuarioEditarController
+    partial class UsuarioEditarForm
     {
         /// <summary>
         /// Variable del diseñador requerida.
@@ -41,11 +41,11 @@
             // 
             this.accion_pic.Image = global::CheckIn_Turnos.Properties.Resources.GrandeEditar;
             // 
-            // UsuarioEditarController
+            // UsuarioEditarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(597, 265);
-            this.Name = "UsuarioEditarController";
+            this.Name = "UsuarioEditarForm";
             this.Text = "Editar Usuario";
             this.ingresoManual_pnl.ResumeLayout(false);
             this.ingresoManual_pnl.PerformLayout();

@@ -10,7 +10,7 @@ using CheckIn_Turnos.Excepciones;
 
 namespace CheckIn_Turnos
 {
-    public partial class IdentificacionController : Form
+    public partial class IdentificacionForm : Form
     {
         int _idUsuario;
         private void ingresar_cmd_Click(object sender, EventArgs e)
