@@ -46,16 +46,66 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="AdministracionController.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AdministracionController.designer.cs">
+      <DependentUpon>AdministracionController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CambioContraseniaController.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CambioContraseniaController.designer.cs">
+      <DependentUpon>CambioContraseniaController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Excepciones\ContraseniasNoCoincidenException.cs" />
+    <Compile Include="IdentificacionController.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IdentificacionController.designer.cs">
+      <DependentUpon>IdentificacionController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Excepciones\ParContraseniaUsuarioIncorrectoException.cs" />
+    <Compile Include="Excepciones\NoPuedeSerVacioException.cs" />
+    <Compile Include="Excepciones\NoSePuedeMostrarContraseniaException.cs" />
+    <Compile Include="TurnosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TurnosForm.Designer.cs">
+      <DependentUpon>TurnosForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="UsuarioEditarController.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsuarioEditarController.designer.cs">
+      <DependentUpon>UsuarioEditarController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsuarioModificarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsuarioModificarForm.designer.cs">
+      <DependentUpon>UsuarioModificarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Excepciones\UsuarioNoPuedeSerNullException.cs" />
+    <Compile Include="UsuarioNuevoController.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsuarioNuevoController.designer.cs">
+      <DependentUpon>UsuarioNuevoController.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdministracionController.resx">
+      <DependentUpon>AdministracionController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CambioContraseniaController.resx">
+      <DependentUpon>CambioContraseniaController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IdentificacionController.resx">
+      <DependentUpon>IdentificacionController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TurnosForm.resx">
+      <DependentUpon>TurnosForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -67,6 +117,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UsuarioEditarController.resx">
+      <DependentUpon>UsuarioEditarController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsuarioModificarForm.resx">
+      <DependentUpon>UsuarioModificarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsuarioNuevoController.resx">
+      <DependentUpon>UsuarioNuevoController.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

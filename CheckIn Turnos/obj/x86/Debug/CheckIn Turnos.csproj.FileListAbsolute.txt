@@ -1,0 +1,15 @@
+C:\Users\Martin\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Martin\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Debug\CheckIn_Turnos.CambioContraseniaForm.resources
+C:\Users\Martin\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Debug\CheckIn_Turnos.IdentificacionController.resources
+C:\Users\Martin\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Debug\CheckIn_Turnos.TurnosForm.resources
+C:\Users\Martin\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Debug\CheckIn_Turnos.Properties.Resources.resources
+C:\Users\Martin\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Debug\CheckIn_Turnos.UsuarioModificarForm.resources
+C:\Users\Martin\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Debug\CheckIn_Turnos.UsuarioNuevoController.resources
+C:\Users\Martin\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Martin\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Martin\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Debug\CheckIn_Turnos.UsuarioEditarController.resources
+C:\Users\Martin\Proyectos\CheckIn Turnos\CheckIn Turnos\bin\Debug\CheckIn Turnos.exe
+C:\Users\Martin\Proyectos\CheckIn Turnos\CheckIn Turnos\bin\Debug\CheckIn Turnos.pdb
+C:\Users\Martin\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Debug\CheckIn Turnos.exe
+C:\Users\Martin\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Debug\CheckIn Turnos.pdb
+C:\Users\Martin\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Debug\CheckIn_Turnos.AdministracionController.resources
