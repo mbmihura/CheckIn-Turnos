@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TurnosForm));
             this.contrasenia_cmd = new System.Windows.Forms.Button();
             this.fecha_lbl = new System.Windows.Forms.Label();
             this.hora_lbl = new System.Windows.Forms.Label();
@@ -159,6 +160,7 @@
             this.Controls.Add(this.Panel1);
             this.Controls.Add(this.administracion_cmd);
             this.Controls.Add(this.turnos_lv);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(350, 279);
             this.Name = "TurnosForm";
             this.Text = "Gestión de Turnos";
