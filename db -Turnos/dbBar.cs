@@ -7,7 +7,7 @@ using db__Turnos.Excepciones;
 
 namespace db__Turnos
 {
-    public class FuncionesDb
+    public class InterfazDb
     {
         //TODO: cifrar cadena conexion.
         //TODO: manejo de excepciones de la bd.

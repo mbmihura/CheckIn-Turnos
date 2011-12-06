@@ -10,6 +10,8 @@ namespace db__Turnos
     /// <summary>Objeto que ejecuta una sentencia SQL que no devuelve datos de por si (SqlCommand.ExecuteNonQuery).</summary>
     class SQLNoConsulta
     {
+        //TODO: extraer cadena conexin para abstraer clase
+
         private string _sentencia;
         public SQLNoConsulta(string sentencia)
         {
