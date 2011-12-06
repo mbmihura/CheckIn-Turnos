@@ -12,12 +12,13 @@ namespace CheckIn_Turnos
 {
     public partial class IdentificacionForm : Form
     {
-        int _idUsuario;
+        int _idUsuario = -1;
         private void ingresar_cmd_Click(object sender, EventArgs e)
         {
             try
             {
                 //TODO: Busca un el usuario con el par id/contraseña intorducidos.
+                // err. conexcion db.
                 this.Close();
             }
             catch (ParContraseniaUsuarioIncorrectoException) //TODO: Solo devuelve ParContraseniaUsuarioIncorrecto? errores de conexion con DB?
@@ -33,9 +34,13 @@ namespace CheckIn_Turnos
         /// <summary>Muestra la pantalla de forma modal para que el usuario se identifique.</summary>
         /// <param name="owner">Formulario padre, que lo llama</param>
         /// <returns>Devuelve en usuario con el par id-contrasenia especifico.</returns>
-        public new int ShowDialog(IWin32Window owner){
+        public new int ShowDialog(IWin32Window owner)
+        {
             base.ShowDialog(owner);
-            return _idUsuario;
+            if (_idUsuario == -1)
+                throw new UsuarioCancelaException();
+            else
+                return _idUsuario;
         }
     }
 }

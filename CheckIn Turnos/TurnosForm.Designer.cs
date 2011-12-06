@@ -54,6 +54,7 @@
             this.contrasenia_cmd.Text = "Cambiar contraseña";
             this.contrasenia_cmd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.contrasenia_cmd.UseVisualStyleBackColor = true;
+            this.contrasenia_cmd.Click += new System.EventHandler(this.contrasenia_cmd_Click);
             // 
             // fecha_lbl
             // 
@@ -95,6 +96,7 @@
             this.CerrarTurno_cmd.Text = "Cerrar Turno";
             this.CerrarTurno_cmd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.CerrarTurno_cmd.UseVisualStyleBackColor = true;
+            this.CerrarTurno_cmd.Click += new System.EventHandler(this.CerrarTurno_cmd_Click);
             // 
             // abrirTurno_cmd
             // 
@@ -108,6 +110,7 @@
             this.abrirTurno_cmd.Text = "Abrir Turno";
             this.abrirTurno_cmd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.abrirTurno_cmd.UseVisualStyleBackColor = true;
+            this.abrirTurno_cmd.Click += new System.EventHandler(this.abrirTurno_cmd_Click);
             // 
             // administracion_cmd
             // 
@@ -117,6 +120,7 @@
             this.administracion_cmd.TabIndex = 28;
             this.administracion_cmd.Text = "Administración";
             this.administracion_cmd.UseVisualStyleBackColor = true;
+            this.administracion_cmd.Click += new System.EventHandler(this.administracion_cmd_Click);
             // 
             // turnos_lv
             // 

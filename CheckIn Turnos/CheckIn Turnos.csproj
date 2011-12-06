@@ -46,24 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdministracionController.cs">
+    <Compile Include="CambioContraseniaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdministracionController.designer.cs">
-      <DependentUpon>AdministracionController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CambioContraseniaController.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CambioContraseniaController.designer.cs">
-      <DependentUpon>CambioContraseniaController.cs</DependentUpon>
+    <Compile Include="CambioContraseniaForm.designer.cs">
+      <DependentUpon>CambioContraseniaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Excepciones\ContraseniasNoCoincidenException.cs" />
-    <Compile Include="IdentificacionController.cs">
+    <Compile Include="IdentificacionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IdentificacionController.designer.cs">
-      <DependentUpon>IdentificacionController.cs</DependentUpon>
+    <Compile Include="IdentificacionForm.designer.cs">
+      <DependentUpon>IdentificacionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Excepciones\ParContraseniaUsuarioIncorrectoException.cs" />
     <Compile Include="Excepciones\NoPuedeSerVacioException.cs" />
@@ -76,33 +70,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UsuarioEditarController.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UsuarioEditarController.designer.cs">
-      <DependentUpon>UsuarioEditarController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UsuarioModificarForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UsuarioModificarForm.designer.cs">
-      <DependentUpon>UsuarioModificarForm.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Excepciones\UsuarioCancelaException.cs" />
     <Compile Include="Excepciones\UsuarioNoPuedeSerNullException.cs" />
-    <Compile Include="UsuarioNuevoController.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UsuarioNuevoController.designer.cs">
-      <DependentUpon>UsuarioNuevoController.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="AdministracionController.resx">
-      <DependentUpon>AdministracionController.cs</DependentUpon>
+    <EmbeddedResource Include="CambioContraseniaForm.resx">
+      <DependentUpon>CambioContraseniaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CambioContraseniaController.resx">
-      <DependentUpon>CambioContraseniaController.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="IdentificacionController.resx">
-      <DependentUpon>IdentificacionController.cs</DependentUpon>
+    <EmbeddedResource Include="IdentificacionForm.resx">
+      <DependentUpon>IdentificacionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TurnosForm.resx">
       <DependentUpon>TurnosForm.cs</DependentUpon>
@@ -117,15 +91,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UsuarioEditarController.resx">
-      <DependentUpon>UsuarioEditarController.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UsuarioModificarForm.resx">
-      <DependentUpon>UsuarioModificarForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UsuarioNuevoController.resx">
-      <DependentUpon>UsuarioNuevoController.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -169,6 +134,7 @@
   <ItemGroup>
     <None Include="Resources\Turno.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

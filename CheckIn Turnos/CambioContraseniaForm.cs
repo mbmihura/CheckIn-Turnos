@@ -29,6 +29,7 @@ namespace CheckIn_Turnos
                 try
                 {
                     // impactar db con contrasenia1_txt.Text;
+                    // err. conexcion
                     this.Close();
                 }
                 catch (NoPuedeSerVacioException ex)
