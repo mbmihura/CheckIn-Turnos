@@ -13,3 +13,4 @@ C:\Users\Martin\Proyectos\CheckIn Turnos\CheckIn Turnos\bin\Debug\CheckIn Turnos
 C:\Users\Martin\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Debug\CheckIn Turnos.exe
 C:\Users\Martin\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Debug\CheckIn Turnos.pdb
 C:\Users\Martin\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Debug\CheckIn_Turnos.AdministracionController.resources
+C:\Users\Martin\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Debug\CheckIn_Turnos.IdentificacionForm.resources
