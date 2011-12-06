@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace db__Turnos
+namespace db__Turnos.Excepciones
 {
     class YaTieneTurnoAbiertoException : Exception
     {
