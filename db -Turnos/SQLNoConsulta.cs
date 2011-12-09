@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Data.SqlClient;
+using System.Data.OleDb;
 using System.Data;
 
 namespace dbTurnos.DataSQL
@@ -19,9 +19,9 @@ namespace dbTurnos.DataSQL
         }
         public int Ejecutar()
         {
-            using (SqlConnection conexion = new SqlConnection(new Properties.Settings().Bar_TurnosConnectionString))
+            using (OleDbConnection conexion = new OleDbConnection(new Properties.Settings().Bar_TurnosConnectionString))
             {
-                SqlCommand comandoSql = new SqlCommand(_sentencia, conexion);
+                OleDbCommand comandoSql = new OleDbCommand(_sentencia, conexion);
                 try
                 {
                     conexion.Open();

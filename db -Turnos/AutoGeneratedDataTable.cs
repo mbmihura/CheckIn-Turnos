@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
-using System.Data.SqlClient;
+using System.Data.OleDb;
+
 
 namespace dbTurnos.DataSQL
 {
@@ -22,13 +23,13 @@ namespace dbTurnos.DataSQL
         }
         public void Refrescar()
         {
-            using (SqlConnection conexion = new SqlConnection(new Properties.Settings().Bar_TurnosConnectionString))
+            using (OleDbConnection conexion = new OleDbConnection(new Properties.Settings().Bar_TurnosConnectionString))
             {
-                SqlCommand comandoSql = new SqlCommand(_consulta, conexion);
+                OleDbCommand comandoSql = new OleDbCommand(_consulta, conexion);
                 try
                 {
                     conexion.Open();
-                    SqlDataAdapter da = new SqlDataAdapter(comandoSql);
+                    OleDbDataAdapter da = new OleDbDataAdapter(comandoSql);
                     da.Fill(this);
                 }
                 catch (Exception ex)
