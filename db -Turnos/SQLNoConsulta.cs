@@ -5,10 +5,10 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Data;
 
-namespace dbTurnos
+namespace dbTurnos.DataSQL
 {
     /// <summary>Objeto que ejecuta una sentencia SQL que no devuelve datos de por si (SqlCommand.ExecuteNonQuery).</summary>
-    class SQLNoConsulta
+    public class SQLNoConsulta
     {
         //TODO: extraer cadena conexin para abstraer clase
 
