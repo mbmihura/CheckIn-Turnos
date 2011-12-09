@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using dbTurnos;
+
 
 namespace CheckIn_Turnos
 {
@@ -36,20 +38,22 @@ namespace CheckIn_Turnos
         {
             try
             {
-                //TODO: db adrir turno (idUsuario)
-                //err. de turno ya abierto
+                InterfazDb.AbrirTurno(new IdentificacionForm().ShowDialog(this),DateTime.Now);
+                //TODO: manejar err. de turno ya abierto
                 //error de base de datos, conexcion
-            } catch ()
-            {}
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void CerrarTurno_cmd_Click(object sender, EventArgs e)
         {
             try
             {
-                //TODO: db cerrar turno (idUsuario)
-                //err. de turno no abierto
+                InterfazDb.CerrarTurno(new IdentificacionForm().ShowDialog(this), DateTime.Now);
+                //TODO:manejar err. de turno no abierto
                 //error de base de datos, conexcion
-            } catch ()
+            } catch (Exception)
             {}
         }
     }

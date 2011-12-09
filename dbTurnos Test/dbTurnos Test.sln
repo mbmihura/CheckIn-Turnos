@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dbTurnos Test", "dbTurnos Test\dbTurnos Test.csproj", "{7A330A24-678A-4363-9969-D93B22B67FCD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A7BFC0A9-D1E6-43BD-ACF2-E1E60BE672A3}"
+	ProjectSection(SolutionItems) = preProject
+		dbTurnos Test.vsmdi = dbTurnos Test.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = dbTurnos Test.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A330A24-678A-4363-9969-D93B22B67FCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A330A24-678A-4363-9969-D93B22B67FCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A330A24-678A-4363-9969-D93B22B67FCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A330A24-678A-4363-9969-D93B22B67FCD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -8,7 +8,7 @@
     <ProjectGuid>{5B952DFB-FE50-4DA2-8DB4-8261FC59821A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>db__Turnos</RootNamespace>
+    <RootNamespace>dbTurnos</RootNamespace>
     <AssemblyName>db -Turnos</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

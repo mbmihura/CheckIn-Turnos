@@ -2,6 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckIn Turnos", "CheckIn Turnos\CheckIn Turnos.csproj", "{E700201F-0D4F-412D-BD19-112ABF2015E9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5B952DFB-FE50-4DA2-8DB4-8261FC59821A} = {5B952DFB-FE50-4DA2-8DB4-8261FC59821A}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "db -Turnos", "db -Turnos\db -Turnos.csproj", "{5B952DFB-FE50-4DA2-8DB4-8261FC59821A}"
 EndProject

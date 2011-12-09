@@ -7,17 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using CheckIn_Turnos.Excepciones;
+using dbTurnos;
 
 namespace CheckIn_Turnos
 {
     public partial class IdentificacionForm : Form
     {
         int _idUsuario = -1;
+        public IdentificacionForm()
+        {
+            InitializeComponent();
+        }
+
         private void ingresar_cmd_Click(object sender, EventArgs e)
         {
             try
             {
-                //TODO: Busca un el usuario con el par id/contraseña intorducidos.
+                InterfazDb.Identificar(usuario_txt.Text, contrasenia_txt.Text);
                 // err. conexcion db.
                 this.Close();
             }

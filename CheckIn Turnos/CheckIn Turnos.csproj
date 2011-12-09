@@ -134,7 +134,12 @@
   <ItemGroup>
     <None Include="Resources\Turno.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\db -Turnos\db -Turnos.csproj">
+      <Project>{5B952DFB-FE50-4DA2-8DB4-8261FC59821A}</Project>
+      <Name>db -Turnos</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
