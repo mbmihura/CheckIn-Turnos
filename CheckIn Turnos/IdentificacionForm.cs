@@ -23,7 +23,7 @@ namespace CheckIn_Turnos
         {
             try
             {
-                InterfazDb.Identificar(usuario_txt.Text, contrasenia_txt.Text);
+                _idUsuario = InterfazDb.Identificar(usuario_txt.Text, contrasenia_txt.Text);
                 // err. conexcion db.
                 this.Close();
             }

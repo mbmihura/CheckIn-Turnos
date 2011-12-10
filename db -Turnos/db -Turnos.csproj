@@ -33,6 +33,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,6 +47,13 @@
     </Compile>
     <Compile Include="Excepciones\InicioTurnoMayorQueFinException.cs" />
     <Compile Include="Excepciones\NoHayTurnoAbiertoException.cs" />
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Excepciones\ParUsuarioContraseñaIncorrectoException.cs" />
     <Compile Include="SQLNoConsulta.cs" />
     <Compile Include="dbBar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,6 +75,11 @@
     <Content Include="Bar Turnos.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

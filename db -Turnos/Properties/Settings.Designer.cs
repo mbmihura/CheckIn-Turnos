@@ -27,7 +27,7 @@ namespace dbTurnos.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\"|DataDirectory|\\Bar Turnos.accdb\";" +
-            "Persist Security Info=True;Jet OLEDB:Database Password=We34*tr9")]
+            "Persist Security Info=True")]
         public string Bar_TurnosConnectionString {
             get {
                 return ((string)(this["Bar_TurnosConnectionString"]));

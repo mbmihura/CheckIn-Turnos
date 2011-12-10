@@ -1,0 +1,8 @@
+C:\Users\Martin\Proyectos\CheckIn Turnos\dbTurnos Test\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Martin\Proyectos\CheckIn Turnos\dbTurnos Test\bin\Debug\Bar Turnos.accdb
+C:\Users\Martin\Proyectos\CheckIn Turnos\dbTurnos Test\bin\Debug\dbTurnos Test.dll
+C:\Users\Martin\Proyectos\CheckIn Turnos\dbTurnos Test\bin\Debug\dbTurnos Test.pdb
+C:\Users\Martin\Proyectos\CheckIn Turnos\dbTurnos Test\bin\Debug\db -Turnos.dll
+C:\Users\Martin\Proyectos\CheckIn Turnos\dbTurnos Test\bin\Debug\db -Turnos.pdb
+C:\Users\Martin\Proyectos\CheckIn Turnos\dbTurnos Test\obj\Debug\dbTurnos Test.dll
+C:\Users\Martin\Proyectos\CheckIn Turnos\dbTurnos Test\obj\Debug\dbTurnos Test.pdb

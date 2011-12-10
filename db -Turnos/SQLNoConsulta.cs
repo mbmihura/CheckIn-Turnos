@@ -16,6 +16,7 @@ namespace dbTurnos.DataSQL
         public SQLNoConsulta(string sentencia)
         {
             _sentencia = sentencia;
+            Ejecutar();
         }
         public int Ejecutar()
         {

@@ -5,3 +5,6 @@ C:\Users\Martin\Proyectos\CheckIn Turnos\db -Turnos\bin\Debug\db -Turnos.pdb
 C:\Users\Martin\Proyectos\CheckIn Turnos\db -Turnos\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Martin\Proyectos\CheckIn Turnos\db -Turnos\obj\Debug\db -Turnos.dll
 C:\Users\Martin\Proyectos\CheckIn Turnos\db -Turnos\obj\Debug\db -Turnos.pdb
+C:\Users\Martin\Proyectos\CheckIn Turnos\db -Turnos\obj\Debug\dbTurnos.Form2.resources
+C:\Users\Martin\Proyectos\CheckIn Turnos\db -Turnos\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\Martin\Proyectos\CheckIn Turnos\db -Turnos\obj\Debug\GenerateResource.write.1.tlog

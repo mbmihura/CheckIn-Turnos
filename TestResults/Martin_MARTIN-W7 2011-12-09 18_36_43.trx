@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="71139b2f-6f84-411e-9a73-a2351512d048" name="Martin@MARTIN-W7 2011-12-09 18:36:43" runUser="Martin-W7\Martin" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="10f11fbf-a532-4800-8c59-53b7c9bfdb52">
+    <Description>Esta es la configuración de pruebas predeterminada para una ejecución de pruebas local.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Martin_MARTIN-W7 2011-12-09 18_36_43">
+      <DeploymentItem filename="C:\Users\Martin\Proyectos\CheckIn Turnos\db -Turnos\bin\Debug\db -Turnos.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-12-09T18:36:43.2160983-03:00" queuing="2011-12-09T18:36:43.2350993-03:00" start="2011-12-09T18:36:43.2531004-03:00" finish="2011-12-09T18:36:45.1652112-03:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="5" executed="5" passed="2" error="0" failed="3" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="AbrirTurnoTest" storage="c:\users\martin\proyectos\checkin turnos\dbturnos test\bin\debug\dbturnos test.dll" id="2d363802-f4a1-6709-a5e4-7c1da0e19126">
+      <Execution id="b29cb861-835d-4be6-9d02-6d9282293a8a" />
+      <TestMethod codeBase="C:/Users/Martin/Proyectos/CheckIn Turnos/dbTurnos Test/bin/Debug/dbTurnos Test.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="dbTurnos_Test.InterfazDbTest, dbTurnos Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="AbrirTurnoTest" />
+    </UnitTest>
+    <UnitTest name="CerrarTurnoTest" storage="c:\users\martin\proyectos\checkin turnos\dbturnos test\bin\debug\dbturnos test.dll" id="768c2340-e2d3-8168-2e0d-e1eb9fbd10ff">
+      <Execution id="7a05763c-860a-4d30-af64-4a2cbd2c6363" />
+      <TestMethod codeBase="C:/Users/Martin/Proyectos/CheckIn Turnos/dbTurnos Test/bin/Debug/dbTurnos Test.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="dbTurnos_Test.InterfazDbTest, dbTurnos Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CerrarTurnoTest" />
+    </UnitTest>
+    <UnitTest name="getTurnosAbiertosTest" storage="c:\users\martin\proyectos\checkin turnos\dbturnos test\bin\debug\dbturnos test.dll" id="1fd7d583-cce7-d201-3f05-dbb6df64a21c">
+      <Execution id="cc3d3e3c-2a29-4a90-8fba-6aa486d3d34d" />
+      <TestMethod codeBase="C:/Users/Martin/Proyectos/CheckIn Turnos/dbTurnos Test/bin/Debug/dbTurnos Test.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="dbTurnos_Test.InterfazDbTest, dbTurnos Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="getTurnosAbiertosTest" />
+    </UnitTest>
+    <UnitTest name="CambiarContraseñaTest" storage="c:\users\martin\proyectos\checkin turnos\dbturnos test\bin\debug\dbturnos test.dll" id="0befebb5-7ef8-4daa-1eaa-9dd9bf1053f2">
+      <Execution id="317aa0b2-d0ba-4f83-98fc-fa8cb9ba4224" />
+      <TestMethod codeBase="C:/Users/Martin/Proyectos/CheckIn Turnos/dbTurnos Test/bin/Debug/dbTurnos Test.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="dbTurnos_Test.InterfazDbTest, dbTurnos Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CambiarContraseñaTest" />
+    </UnitTest>
+    <UnitTest name="IdentificarTest" storage="c:\users\martin\proyectos\checkin turnos\dbturnos test\bin\debug\dbturnos test.dll" id="5fecd3b2-f296-46a9-3876-9fa64c10c32c">
+      <Execution id="f9407967-13f7-454e-8f93-1c4871471eea" />
+      <TestMethod codeBase="C:/Users/Martin/Proyectos/CheckIn Turnos/dbTurnos Test/bin/Debug/dbTurnos Test.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="dbTurnos_Test.InterfazDbTest, dbTurnos Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="IdentificarTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Resultados que no están en la lista" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="Todos los resultados cargados" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="0befebb5-7ef8-4daa-1eaa-9dd9bf1053f2" executionId="317aa0b2-d0ba-4f83-98fc-fa8cb9ba4224" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1fd7d583-cce7-d201-3f05-dbb6df64a21c" executionId="cc3d3e3c-2a29-4a90-8fba-6aa486d3d34d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2d363802-f4a1-6709-a5e4-7c1da0e19126" executionId="b29cb861-835d-4be6-9d02-6d9282293a8a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5fecd3b2-f296-46a9-3876-9fa64c10c32c" executionId="f9407967-13f7-454e-8f93-1c4871471eea" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="768c2340-e2d3-8168-2e0d-e1eb9fbd10ff" executionId="7a05763c-860a-4d30-af64-4a2cbd2c6363" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="317aa0b2-d0ba-4f83-98fc-fa8cb9ba4224" testId="0befebb5-7ef8-4daa-1eaa-9dd9bf1053f2" testName="CambiarContraseñaTest" computerName="MARTIN-W7" duration="00:00:00.3317337" startTime="2011-12-09T18:36:43.2601008-03:00" endTime="2011-12-09T18:36:43.9001388-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="317aa0b2-d0ba-4f83-98fc-fa8cb9ba4224">
+    </UnitTestResult>
+    <UnitTestResult executionId="cc3d3e3c-2a29-4a90-8fba-6aa486d3d34d" testId="1fd7d583-cce7-d201-3f05-dbb6df64a21c" testName="getTurnosAbiertosTest" computerName="MARTIN-W7" duration="00:00:00.1687293" startTime="2011-12-09T18:36:43.9021390-03:00" endTime="2011-12-09T18:36:44.0771490-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cc3d3e3c-2a29-4a90-8fba-6aa486d3d34d">
+      <Output>
+        <ErrorInfo>
+          <Message>Error de Assert.AreEqual. Se esperaba &lt;(null)&gt;, pero es &lt;&gt;. </Message>
+          <StackTrace>   en dbTurnos_Test.InterfazDbTest.getTurnosAbiertosTest() en C:\Users\Martin\Proyectos\CheckIn Turnos\dbTurnos Test\InterfazDbTest.cs:línea 78
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="b29cb861-835d-4be6-9d02-6d9282293a8a" testId="2d363802-f4a1-6709-a5e4-7c1da0e19126" testName="AbrirTurnoTest" computerName="MARTIN-W7" duration="00:00:00.5734997" startTime="2011-12-09T18:36:44.0791491-03:00" endTime="2011-12-09T18:36:44.6581822-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b29cb861-835d-4be6-9d02-6d9282293a8a">
+      <Output>
+        <ErrorInfo>
+          <Message>Error de Assert.AreEqual. Se esperaba &lt;3&gt;, pero es &lt;8&gt;. </Message>
+          <StackTrace>   en dbTurnos_Test.InterfazDbTest.AbrirTurnoTest() en C:\Users\Martin\Proyectos\CheckIn Turnos\dbTurnos Test\InterfazDbTest.cs:línea 126
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f9407967-13f7-454e-8f93-1c4871471eea" testId="5fecd3b2-f296-46a9-3876-9fa64c10c32c" testName="IdentificarTest" computerName="MARTIN-W7" duration="00:00:00.1400670" startTime="2011-12-09T18:36:44.6611824-03:00" endTime="2011-12-09T18:36:44.8071907-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f9407967-13f7-454e-8f93-1c4871471eea">
+    </UnitTestResult>
+    <UnitTestResult executionId="7a05763c-860a-4d30-af64-4a2cbd2c6363" testId="768c2340-e2d3-8168-2e0d-e1eb9fbd10ff" testName="CerrarTurnoTest" computerName="MARTIN-W7" duration="00:00:00.1444942" startTime="2011-12-09T18:36:44.8091908-03:00" endTime="2011-12-09T18:36:44.9591994-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7a05763c-860a-4d30-af64-4a2cbd2c6363">
+      <Output>
+        <ErrorInfo>
+          <Message>El método de prueba dbTurnos_Test.InterfazDbTest.CerrarTurnoTest produjo la excepción: 
+System.Data.OleDb.OleDbException: Error de sintaxis (coma) en la expresión de consulta 'fechaInicio = '20100101', fechaFin is Null, idUsuario = 1'.</Message>
+          <StackTrace>    en dbTurnos.DataSQL.AutoGeneratedDataTable.Refrescar() en C:\Users\Martin\Proyectos\CheckIn Turnos\db -Turnos\AutoGeneratedDataTable.cs:línea 37
+   en dbTurnos.DataSQL.AutoGeneratedDataTable..ctor(String consulta) en C:\Users\Martin\Proyectos\CheckIn Turnos\db -Turnos\AutoGeneratedDataTable.cs:línea 22
+   en dbTurnos_Test.InterfazDbTest.CerrarTurnoTest() en C:\Users\Martin\Proyectos\CheckIn Turnos\dbTurnos Test\InterfazDbTest.cs:línea 138
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

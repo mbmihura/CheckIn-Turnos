@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using CheckIn_Turnos.Excepciones;
+using dbTurnos;
 
 namespace CheckIn_Turnos
 {
@@ -19,6 +20,7 @@ namespace CheckIn_Turnos
         public CambioContraseniaForm(int idUsuario)
         {
             _idUsusuario = idUsuario;
+            InitializeComponent();
         }
 
         private void aceptar_cmd_Click(object sender, EventArgs e)
@@ -28,7 +30,7 @@ namespace CheckIn_Turnos
             {
                 try
                 {
-                    // impactar db con contrasenia1_txt.Text;
+                    InterfazDb.CambiarContraseña(_idUsusuario, contrasenia1_txt.Text);
                     // err. conexcion
                     this.Close();
                 }
