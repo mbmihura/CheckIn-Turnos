@@ -5,7 +5,7 @@ using System.Text;
 
 namespace dbTurnos.Excepciones
 {
-    class ParUsuarioContraseñaIncorrectoException : Exception
+    public class ParUsuarioContraseñaIncorrectoException : Exception
     {
     }
 }

@@ -9,6 +9,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "db -Turnos", "db -Turnos\db -Turnos.csproj", "{5B952DFB-FE50-4DA2-8DB4-8261FC59821A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dbTurnos Test", "dbTurnos Test\dbTurnos Test.csproj", "{180CB31D-6482-4710-AAF7-D32B1D1BB071}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E700201F-0D4F-412D-BD19-112ABF2015E9} = {E700201F-0D4F-412D-BD19-112ABF2015E9}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A7BF47D2-1B99-4F89-8C7B-0FBB5D1E8AF2}"
 	ProjectSection(SolutionItems) = preProject

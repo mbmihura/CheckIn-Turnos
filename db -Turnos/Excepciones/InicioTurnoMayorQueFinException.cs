@@ -5,7 +5,7 @@ using System.Text;
 
 namespace dbTurnos.Excepciones
 {
-    class InicioTurnoMayorQueFinException : Exception
+    public class InicioTurnoMayorQueFinException : Exception
     {
     }
 }

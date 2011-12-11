@@ -5,7 +5,7 @@ using System.Text;
 
 namespace dbTurnos.Excepciones
 {
-    class NoHayTurnoAbiertoException : Exception
+    public class NoHayTurnoAbiertoException : Exception
     {
     }
 }

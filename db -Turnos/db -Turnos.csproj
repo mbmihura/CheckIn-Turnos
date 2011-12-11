@@ -72,9 +72,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Bar Turnos.accdb">
+    <Compile Include="Bar Turnos.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form2.resx">
