@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TurnosForm));
             this.contrasenia_cmd = new System.Windows.Forms.Button();
             this.fecha_lbl = new System.Windows.Forms.Label();
@@ -40,6 +41,7 @@
             this.nombre_col = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.horaEntrada_col = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tiempo_col = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.horaYTurnosAbiertos_tmr = new System.Windows.Forms.Timer(this.components);
             this.Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -153,6 +155,12 @@
             this.tiempo_col.Text = "Tiempo";
             this.tiempo_col.Width = 105;
             // 
+            // horaYTurnosAbiertos_tmr
+            // 
+            this.horaYTurnosAbiertos_tmr.Enabled = true;
+            this.horaYTurnosAbiertos_tmr.Interval = 30000;
+            this.horaYTurnosAbiertos_tmr.Tick += new System.EventHandler(this.horaYTurnosAbiertos_tmr_Tick);
+            // 
             // TurnosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,6 +194,7 @@
         internal System.Windows.Forms.ColumnHeader nombre_col;
         internal System.Windows.Forms.ColumnHeader horaEntrada_col;
         internal System.Windows.Forms.ColumnHeader tiempo_col;
+        private System.Windows.Forms.Timer horaYTurnosAbiertos_tmr;
     }
 }
 

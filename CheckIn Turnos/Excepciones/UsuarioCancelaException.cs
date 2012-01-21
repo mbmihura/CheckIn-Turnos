@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CheckIn_Turnos
+namespace CheckIn_Turnos.Excepciones
 {
     class UsuarioCancelaException : Exception
     {

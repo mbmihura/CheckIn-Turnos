@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="e36792f3-f473-4a52-a64e-7ec2554935b0" name="Martin@MARTIN-W7 2011-12-11 16:46:58" runUser="Martin-W7\Martin" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="10f11fbf-a532-4800-8c59-53b7c9bfdb52">
+    <Description>Esta es la configuración de pruebas predeterminada para una ejecución de pruebas local.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Martin_MARTIN-W7 2011-12-11 16_46_58">
+      <DeploymentItem filename="C:\Users\Martin\Proyectos\CheckIn Turnos\db -Turnos\bin\Debug\db -Turnos.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-12-11T16:46:58.1977067-03:00" queuing="2011-12-11T16:46:59.3627734-03:00" start="2011-12-11T16:46:59.5517842-03:00" finish="2011-12-11T16:48:20.3724069-03:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="8" executed="7" passed="6" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="1" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="MARTIN-W7" outcome="Error" timestamp="2011-12-11T16:48:20.3694067-03:00">
+        <Text>El proceso del host de pruebas terminó inesperadamente.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="CerrarTurnoTestSinTurnoAbierto" storage="c:\users\martin\proyectos\checkin turnos\dbturnos test\bin\debug\dbturnos test.dll" id="eec8d396-a7a0-156d-8edc-4e9e8f3084c5">
+      <Execution id="85251c79-e9bb-450a-9279-18a06af36fbb" />
+      <TestMethod codeBase="C:/Users/Martin/Proyectos/CheckIn Turnos/dbTurnos Test/bin/Debug/dbTurnos Test.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="dbTurnos_Test.InterfazDbTest, dbTurnos Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CerrarTurnoTestSinTurnoAbierto" />
+    </UnitTest>
+    <UnitTest name="AbrirTurnoTestConUnoYaAbierto" storage="c:\users\martin\proyectos\checkin turnos\dbturnos test\bin\debug\dbturnos test.dll" id="16b2fd6e-85b7-9089-7db0-95a134403942">
+      <Execution id="fd5b84ea-632d-4433-aee2-f68292a95288" />
+      <TestMethod codeBase="C:/Users/Martin/Proyectos/CheckIn Turnos/dbTurnos Test/bin/Debug/dbTurnos Test.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="dbTurnos_Test.InterfazDbTest, dbTurnos Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="AbrirTurnoTestConUnoYaAbierto" />
+    </UnitTest>
+    <UnitTest name="IdentificarFallaParUsuarioContraseñaTest" storage="c:\users\martin\proyectos\checkin turnos\dbturnos test\bin\debug\dbturnos test.dll" id="17847006-8c7c-7180-aaae-d757e42f71ba">
+      <Execution id="8a9a6e02-e6bc-48f8-a336-d7d5353319b0" />
+      <TestMethod codeBase="C:/Users/Martin/Proyectos/CheckIn Turnos/dbTurnos Test/bin/Debug/dbTurnos Test.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="dbTurnos_Test.InterfazDbTest, dbTurnos Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="IdentificarFallaParUsuarioContraseñaTest" />
+    </UnitTest>
+    <UnitTest name="CerrarTurnoTest" storage="c:\users\martin\proyectos\checkin turnos\dbturnos test\bin\debug\dbturnos test.dll" id="768c2340-e2d3-8168-2e0d-e1eb9fbd10ff">
+      <Execution id="c0bce015-f7dc-462d-8154-1babda2ccd1d" />
+      <TestMethod codeBase="C:/Users/Martin/Proyectos/CheckIn Turnos/dbTurnos Test/bin/Debug/dbTurnos Test.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="dbTurnos_Test.InterfazDbTest, dbTurnos Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CerrarTurnoTest" />
+    </UnitTest>
+    <UnitTest name="AbrirTurnoTest" storage="c:\users\martin\proyectos\checkin turnos\dbturnos test\bin\debug\dbturnos test.dll" id="2d363802-f4a1-6709-a5e4-7c1da0e19126">
+      <Execution id="e147e735-edb0-4b4d-aa18-9bb0675d000d" />
+      <TestMethod codeBase="C:/Users/Martin/Proyectos/CheckIn Turnos/dbTurnos Test/bin/Debug/dbTurnos Test.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="dbTurnos_Test.InterfazDbTest, dbTurnos Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="AbrirTurnoTest" />
+    </UnitTest>
+    <UnitTest name="CambiarContraseñaTest" storage="c:\users\martin\proyectos\checkin turnos\dbturnos test\bin\debug\dbturnos test.dll" id="0befebb5-7ef8-4daa-1eaa-9dd9bf1053f2">
+      <Execution id="e7842f9f-b655-477f-ae20-465e2dbf88f8" />
+      <TestMethod codeBase="C:/Users/Martin/Proyectos/CheckIn Turnos/dbTurnos Test/bin/Debug/dbTurnos Test.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="dbTurnos_Test.InterfazDbTest, dbTurnos Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CambiarContraseñaTest" />
+    </UnitTest>
+    <UnitTest name="IdentificarTest" storage="c:\users\martin\proyectos\checkin turnos\dbturnos test\bin\debug\dbturnos test.dll" id="5fecd3b2-f296-46a9-3876-9fa64c10c32c">
+      <Execution id="a0c50651-a4d2-417b-b339-3b1f47dafba7" />
+      <TestMethod codeBase="C:/Users/Martin/Proyectos/CheckIn Turnos/dbTurnos Test/bin/Debug/dbTurnos Test.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="dbTurnos_Test.InterfazDbTest, dbTurnos Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="IdentificarTest" />
+    </UnitTest>
+    <UnitTest name="CerrarTurnoTestConFechaPreviaAFechaApertura" storage="c:\users\martin\proyectos\checkin turnos\dbturnos test\bin\debug\dbturnos test.dll" id="dfee3c4b-9899-f49f-6f29-1050e756db1a">
+      <Execution id="f3916f12-3f7b-475f-b454-7b6839e64701" />
+      <TestMethod codeBase="C:/Users/Martin/Proyectos/CheckIn Turnos/dbTurnos Test/bin/Debug/dbTurnos Test.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="dbTurnos_Test.InterfazDbTest, dbTurnos Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CerrarTurnoTestConFechaPreviaAFechaApertura" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Resultados que no están en la lista" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="Todos los resultados cargados" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="0befebb5-7ef8-4daa-1eaa-9dd9bf1053f2" executionId="e7842f9f-b655-477f-ae20-465e2dbf88f8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="16b2fd6e-85b7-9089-7db0-95a134403942" executionId="fd5b84ea-632d-4433-aee2-f68292a95288" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="17847006-8c7c-7180-aaae-d757e42f71ba" executionId="8a9a6e02-e6bc-48f8-a336-d7d5353319b0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2d363802-f4a1-6709-a5e4-7c1da0e19126" executionId="e147e735-edb0-4b4d-aa18-9bb0675d000d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5fecd3b2-f296-46a9-3876-9fa64c10c32c" executionId="a0c50651-a4d2-417b-b339-3b1f47dafba7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="768c2340-e2d3-8168-2e0d-e1eb9fbd10ff" executionId="c0bce015-f7dc-462d-8154-1babda2ccd1d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="dfee3c4b-9899-f49f-6f29-1050e756db1a" executionId="f3916f12-3f7b-475f-b454-7b6839e64701" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="eec8d396-a7a0-156d-8edc-4e9e8f3084c5" executionId="85251c79-e9bb-450a-9279-18a06af36fbb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="e7842f9f-b655-477f-ae20-465e2dbf88f8" testId="0befebb5-7ef8-4daa-1eaa-9dd9bf1053f2" testName="CambiarContraseñaTest" computerName="MARTIN-W7" duration="00:00:00.7221636" startTime="2011-12-11T16:46:59.7317945-03:00" endTime="2011-12-11T16:47:01.0648707-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e7842f9f-b655-477f-ae20-465e2dbf88f8">
+    </UnitTestResult>
+    <UnitTestResult executionId="fd5b84ea-632d-4433-aee2-f68292a95288" testId="16b2fd6e-85b7-9089-7db0-95a134403942" testName="AbrirTurnoTestConUnoYaAbierto" computerName="MARTIN-W7" duration="00:00:01.9074600" startTime="2011-12-11T16:47:01.0838718-03:00" endTime="2011-12-11T16:47:03.0129821-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fd5b84ea-632d-4433-aee2-f68292a95288">
+    </UnitTestResult>
+    <UnitTestResult executionId="8a9a6e02-e6bc-48f8-a336-d7d5353319b0" testId="17847006-8c7c-7180-aaae-d757e42f71ba" testName="IdentificarFallaParUsuarioContraseñaTest" computerName="MARTIN-W7" duration="00:00:02.6041439" startTime="2011-12-11T16:47:03.0369835-03:00" endTime="2011-12-11T16:47:05.6831349-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8a9a6e02-e6bc-48f8-a336-d7d5353319b0">
+    </UnitTestResult>
+    <UnitTestResult executionId="e147e735-edb0-4b4d-aa18-9bb0675d000d" testId="2d363802-f4a1-6709-a5e4-7c1da0e19126" testName="AbrirTurnoTest" computerName="MARTIN-W7" duration="00:00:00.5429066" startTime="2011-12-11T16:47:05.7101364-03:00" endTime="2011-12-11T16:47:06.2631680-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e147e735-edb0-4b4d-aa18-9bb0675d000d">
+    </UnitTestResult>
+    <UnitTestResult executionId="a0c50651-a4d2-417b-b339-3b1f47dafba7" testId="5fecd3b2-f296-46a9-3876-9fa64c10c32c" testName="IdentificarTest" computerName="MARTIN-W7" duration="00:00:00.1394122" startTime="2011-12-11T16:47:06.2771688-03:00" endTime="2011-12-11T16:47:06.4271774-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a0c50651-a4d2-417b-b339-3b1f47dafba7">
+    </UnitTestResult>
+    <UnitTestResult executionId="c0bce015-f7dc-462d-8154-1babda2ccd1d" testId="768c2340-e2d3-8168-2e0d-e1eb9fbd10ff" testName="CerrarTurnoTest" computerName="MARTIN-W7" duration="00:00:08.5801887" startTime="2011-12-11T16:47:06.4361779-03:00" endTime="2011-12-11T16:47:15.0266693-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c0bce015-f7dc-462d-8154-1babda2ccd1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="f3916f12-3f7b-475f-b454-7b6839e64701" testId="dfee3c4b-9899-f49f-6f29-1050e756db1a" testName="CerrarTurnoTestConFechaPreviaAFechaApertura" computerName="MARTIN-W7" duration="00:01:05.3357370" startTime="2011-12-11T16:47:15.0366699-03:00" endTime="2011-12-11T16:48:20.3724069-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f3916f12-3f7b-475f-b454-7b6839e64701">
+    </UnitTestResult>
+    <UnitTestResult executionId="85251c79-e9bb-450a-9279-18a06af36fbb" testId="eec8d396-a7a0-156d-8edc-4e9e8f3084c5" testName="CerrarTurnoTestSinTurnoAbierto" computerName="MARTIN-W7" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="85251c79-e9bb-450a-9279-18a06af36fbb">
+    </UnitTestResult>
+  </Results>
+</TestRun>
