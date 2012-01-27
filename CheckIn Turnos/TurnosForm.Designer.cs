@@ -42,7 +42,11 @@
             this.horaEntrada_col = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tiempo_col = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.horaYTurnosAbiertos_tmr = new System.Windows.Forms.Timer(this.components);
+            this.notificacion_pnl = new System.Windows.Forms.Panel();
+            this.notificacion_lbl = new System.Windows.Forms.Label();
+            this.NotificacionIma_lbl = new System.Windows.Forms.Label();
             this.Panel1.SuspendLayout();
+            this.notificacion_pnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // contrasenia_cmd
@@ -130,6 +134,7 @@
             this.nombre_col,
             this.horaEntrada_col,
             this.tiempo_col});
+            this.turnos_lv.FullRowSelect = true;
             this.turnos_lv.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.turnos_lv.Location = new System.Drawing.Point(12, 125);
             this.turnos_lv.MultiSelect = false;
@@ -139,6 +144,7 @@
             this.turnos_lv.TabIndex = 27;
             this.turnos_lv.UseCompatibleStateImageBehavior = false;
             this.turnos_lv.View = System.Windows.Forms.View.Details;
+            this.turnos_lv.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.turnos_lv_MouseDoubleClick);
             // 
             // nombre_col
             // 
@@ -158,14 +164,59 @@
             // horaYTurnosAbiertos_tmr
             // 
             this.horaYTurnosAbiertos_tmr.Enabled = true;
-            this.horaYTurnosAbiertos_tmr.Interval = 30000;
+            this.horaYTurnosAbiertos_tmr.Interval = 10000;
             this.horaYTurnosAbiertos_tmr.Tick += new System.EventHandler(this.horaYTurnosAbiertos_tmr_Tick);
+            // 
+            // notificacion_pnl
+            // 
+            this.notificacion_pnl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.notificacion_pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(247)))), ((int)(((byte)(222)))));
+            this.notificacion_pnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.notificacion_pnl.Controls.Add(this.notificacion_lbl);
+            this.notificacion_pnl.Controls.Add(this.NotificacionIma_lbl);
+            this.notificacion_pnl.Location = new System.Drawing.Point(15, 321);
+            this.notificacion_pnl.Name = "notificacion_pnl";
+            this.notificacion_pnl.Size = new System.Drawing.Size(245, 25);
+            this.notificacion_pnl.TabIndex = 33;
+            this.notificacion_pnl.Visible = false;
+            // 
+            // notificacion_lbl
+            // 
+            this.notificacion_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.notificacion_lbl.Location = new System.Drawing.Point(41, 0);
+            this.notificacion_lbl.Name = "notificacion_lbl";
+            this.notificacion_lbl.Size = new System.Drawing.Size(203, 23);
+            this.notificacion_lbl.TabIndex = 18;
+            this.notificacion_lbl.Text = "Turno abierto para usuario.";
+            this.notificacion_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.notificacion_lbl.Click += new System.EventHandler(this.notificacion_lbl_Click);
+            // 
+            // NotificacionIma_lbl
+            // 
+            this.NotificacionIma_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.NotificacionIma_lbl.AutoEllipsis = true;
+            this.NotificacionIma_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(247)))), ((int)(((byte)(222)))));
+            this.NotificacionIma_lbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NotificacionIma_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NotificacionIma_lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(71)))), ((int)(((byte)(33)))));
+            this.NotificacionIma_lbl.Image = ((System.Drawing.Image)(resources.GetObject("NotificacionIma_lbl.Image")));
+            this.NotificacionIma_lbl.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.NotificacionIma_lbl.Location = new System.Drawing.Point(-1, 0);
+            this.NotificacionIma_lbl.Name = "NotificacionIma_lbl";
+            this.NotificacionIma_lbl.Size = new System.Drawing.Size(48, 23);
+            this.NotificacionIma_lbl.TabIndex = 17;
+            this.NotificacionIma_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.NotificacionIma_lbl.Click += new System.EventHandler(this.NotificacionIma_lbl_Click);
             // 
             // TurnosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(460, 391);
+            this.Controls.Add(this.notificacion_pnl);
             this.Controls.Add(this.contrasenia_cmd);
             this.Controls.Add(this.fecha_lbl);
             this.Controls.Add(this.hora_lbl);
@@ -177,9 +228,12 @@
             this.Name = "TurnosForm";
             this.Text = "Gestión de Turnos";
             this.Panel1.ResumeLayout(false);
+            this.notificacion_pnl.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
+
+        
 
         #endregion
 
@@ -195,6 +249,10 @@
         internal System.Windows.Forms.ColumnHeader horaEntrada_col;
         internal System.Windows.Forms.ColumnHeader tiempo_col;
         private System.Windows.Forms.Timer horaYTurnosAbiertos_tmr;
+        internal System.Windows.Forms.Panel notificacion_pnl;
+        private System.Windows.Forms.Label notificacion_lbl;
+        internal System.Windows.Forms.Label NotificacionIma_lbl;
+
     }
 }
 

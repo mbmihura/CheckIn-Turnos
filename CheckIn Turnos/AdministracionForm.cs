@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using dbTurnos;
 using CheckIn_Turnos.Excepciones;
 using System.IO;
+using System.Diagnostics;
 
 namespace CheckIn_Turnos
 {
@@ -24,17 +25,22 @@ namespace CheckIn_Turnos
 
         private void nuevo_cmd_Click(object sender, EventArgs e)
         {
-            //TODO:
-            //new UsuarioNuevoController().ShowDialog(this);
-            ActualizarUsuariosDatagrid();
+            Action nuevoUsuario = () =>
+           {
+               new UsuarioNuevoForm().ShowDialog(this);
+               ActualizarUsuariosDatagrid();
+           };
+            ErrorHandlerForUserInterface.intentar(nuevoUsuario);
         }
 
         private void modificar_cmd_Click(object sender, EventArgs e)
         {
-            //TODO:
-            //usuario_dgv.DataSource = Usuario.
-            //new UsuarioEditarController(usuario_dgv.DataSourceSelectedRows[0].Cells[0].Value.ToString()).ShowDialog(this);
-            //ActualizarUsuariosDatagrid();
+            Action modificarUsuario = () =>
+            {
+                new UsuarioEditarForm(InterfazDb.getUsuarioId(usuario_dgv.SelectedRows[0].Cells[0].Value.ToString())).ShowDialog(this);
+                ActualizarUsuariosDatagrid();
+            };
+            ErrorHandlerForUserInterface.intentar (modificarUsuario);
         }
 
         private void ActualizarUsuariosDatagrid()
@@ -44,11 +50,15 @@ namespace CheckIn_Turnos
 
         private void eliminar_cmd_Click(object sender, EventArgs e)
         {
-            if (DialogResult.Yes == MessageBox.Show("¿Seguro que desea eliminar a " + usuario_dgv.SelectedRows[0].Cells[2].Value + " del sistema? Toda la informacion respecto a sus turnos seran eliminados", "Eliminar " + "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
+            if (DialogResult.Yes == MessageBox.Show("¿Seguro que desea eliminar a " + usuario_dgv.SelectedRows[0].Cells[2].Value + " del sistema? Toda la informacion respecto a sus turnos sera eliminada.", "Eliminar " + "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
             {
                 //HACK: validar que no se trate de elimnar el mismo
-                InterfazDb.UsuariosEliminar(Convert.ToInt32(usuario_dgv.SelectedRows[0].Cells[0].Value));
-                ActualizarUsuariosDatagrid();
+                Action EliminarUsuario = () =>
+                {
+                    InterfazDb.UsuariosEliminar(Convert.ToInt32(usuario_dgv.SelectedRows[0].Cells[0].Value));
+                    ActualizarUsuariosDatagrid();
+                };
+                ErrorHandlerForUserInterface.intentar(EliminarUsuario);
             }
         }
         
@@ -62,14 +72,14 @@ namespace CheckIn_Turnos
         }
         private void fechaDesde_dtp_ValueChanged(object sender, EventArgs e)
         {
-            //TODO: Validar que fecha desde no sea mayor a hasta
+            //HACK: Validar que fecha desde no sea mayor a hasta
             desde_chk.Checked = true;
             ActualizarTurnosDatagrid();
         }
 
         private void fechaHasta_dtp_ValueChanged(object sender, EventArgs e)
         {
-            //TODO: Validar que fecha hasta sea mayor a desde
+            //HACK: Validar que fecha hasta sea mayor a desde
             desde_chk.Checked = true;
             ActualizarTurnosDatagrid();
         }
@@ -79,43 +89,50 @@ namespace CheckIn_Turnos
             string _filtro = "WHERE (Usuarios.nombre LIKE '%" + nombre_txt.Text + "%')";
             if (desde_chk.Checked)
                 _filtro += " AND (Turnos.fechaInicio BETWEEN #" + fechaDesde_dtp.Value.ToString("yyyy/MM/dd hh:mm:ss") + "# AND #" + fechaHasta_dtp.Value.ToString("yyyy/MM/dd hh:mm:ss") + "#)";
-            turnos_dgv.DataSource = InterfazDb.getTurnosCumplen(_filtro);
+            Action cargarTurnos_dvg = () => { turnos_dgv.DataSource = InterfazDb.getTurnosCumplen(_filtro); };
+            ErrorHandlerForUserInterface.intentar(cargarTurnos_dvg);
         }
 
         private void exportar_cmd_Click(object sender, EventArgs e)
         {
             if (exportar_sfd.ShowDialog() == DialogResult.OK)
             {
-                EscribirArchivo(exportar_sfd.FileName);
-            }
-        }
-        private void EscribirArchivo(string fName)
-        {
-            StringBuilder sbCSV = new StringBuilder();
-            int intColCount = turnos_dgv.ColumnCount;
-            foreach (DataGridViewRow dr in turnos_dgv.Rows)
-            {
-                for (int x = 0; x < intColCount; x++)
+                try
                 {
-                    sbCSV.Append(dr.Cells[x].Value);
-                    if ((x + 1) != intColCount)
+                    StringBuilder sbCSV = new StringBuilder();
+                    int intColCount = turnos_dgv.ColumnCount;
+                    foreach (DataGridViewRow dr in turnos_dgv.Rows)
                     {
-                        sbCSV.Append(",");
+                        for (int x = 0; x < intColCount; x++)
+                        {
+                            sbCSV.Append(dr.Cells[x].Value);
+                            if ((x + 1) != intColCount)
+                            {
+                                sbCSV.Append(",");
+                            }
+                        }
+                        sbCSV.Append("\n");
                     }
-                }
-                sbCSV.Append("\n");
-            }
 
-            try
-            {
-                StreamWriter objWriter = new StreamWriter(fName, false);
-                objWriter.WriteLine(sbCSV.ToString());
-                objWriter.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ocurrió un error al guargar el archivo csv: " + ex.ToString());
+                
+                    StreamWriter objWriter = new StreamWriter(exportar_sfd.FileName, false);
+                    objWriter.WriteLine(sbCSV.ToString());
+                    objWriter.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se pudo guardar el archivo csv." + ex.Message);
+                    //TODO: dejar contacia en el log.
+                }
+         
             }
         }
+
+        private void salir_cmd_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+
             }
 }

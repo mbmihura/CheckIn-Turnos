@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using CheckIn_Turnos.Excepciones;
 using dbTurnos;
+using dbTurnos.Excepciones;
 
 namespace CheckIn_Turnos
 {
@@ -18,6 +19,12 @@ namespace CheckIn_Turnos
         public IdentificacionForm()
         {
             InitializeComponent();
+        }
+
+        public IdentificacionForm(string titulo)
+        {
+            InitializeComponent();
+            Text = titulo + " - Identificacion de Usuario";
         }
 
         /// <exception cref="System.InvalidOperationException"></exception>
@@ -32,11 +39,10 @@ namespace CheckIn_Turnos
                 _idUsuario = InterfazDb.Identificar(usuario_txt.Text, contrasenia_txt.Text);
                 this.Close();
             }
-            catch (ParContraseniaUsuarioIncorrectoException)
+            catch (ParUsuarioContraseñaIncorrectoException)
             {
                 //informa err y limpia campos.
                 MessageBox.Show("Usuario y/o contraseña incorrecto. Intente nuevamente.", "Identificación de Usuario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                usuario_txt.Text = "";
                 usuario_txt.Focus();
                 contrasenia_txt.Text = "";
             }
@@ -57,7 +63,17 @@ namespace CheckIn_Turnos
             if (_idUsuario == -1)
                 throw new UsuarioCancelaException();
             else
+            {
+                if (InterfazDb.UsuarioGetRequiereCambio(_idUsuario))
+                    new CambioContraseñaForm(_idUsuario).showDialogRequerido(owner);
                 return _idUsuario;
+            }
+        }
+
+        public int ShowDialog(string usuarioDefault, IWin32Window owner)
+        {
+            usuario_txt.Text = usuarioDefault;
+            return ShowDialog(owner);
         }
     }
 }

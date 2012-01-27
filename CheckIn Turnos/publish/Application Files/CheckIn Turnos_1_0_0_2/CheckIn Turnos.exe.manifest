@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1">
+  <asmv1:assemblyIdentity name="CheckIn Turnos.exe" version="1.0.0.2" publicKeyToken="a9640cdae965b7c9" language="neutral" processorArchitecture="x86" type="win32" />
+  <description asmv2:iconFile="Turno.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="CheckIn Turnos" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+    <commandLine file="CheckIn Turnos.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          Opciones del manifiesto de Control de cuentas de usuario
+          Si desea cambiar el nivel de Control de cuentas de usuario de Windows, reemplace el 
+          nodo requestedExecutionLevel por alguno de los siguientes.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         Si desea usar la virtualización de archivos y del Registro para la 
+         compatibilidad con versiones anteriores, elimine el nodo requestedExecutionLevel.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CheckIn Turnos.exe" size="82944">
+      <assemblyIdentity name="CheckIn Turnos" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>kgO5MHyh63OKyz/jWvClEjytV1M=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="db -Turnos.dll" size="16896">
+      <assemblyIdentity name="db -Turnos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>INclLv9q/WjCg4ZeAnfCclaTjpc=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="CheckIn Turnos.exe.config" size="528">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>HVkgMG2egW0kaLG9exWYiiaERJ4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Turno.ico" size="1150">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>TRGiVJ8ZaPCwggTpCRJT/fdoGVA=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=Martin-W7\Martin" issuerKeyHash="8675c327829263c5703413503f9d969ff311e850" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>ZVYgHeppgg9UosREQMs/TOvllJM=</DigestValue></Reference></SignedInfo><SignatureValue>kTrpxXu6PTuHbP0Tgj8mBn9R5u0beDy4ZMMN7uHPAVMiOFIAsyp6O5ULnK1LyEGD7C/D1DQSu9ZJFhqCfNEuuHS/qgvBRzPpKivRpU9wWrwL6mXDWc6MvwxeD4IQ9wrKkwdhw9b0z0xuXJCLkJnWozY/3TlYJO3BiMtBfiLFzYA=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>qrpkpKVBAXOCEltRhBD5/U7XdZlcMYxtbj7WLs4jteTq41UsVT+THPNC4cCr/5yatVtZ9+dDftC2ABGbNyKEuyRUevwgJdXIeomfqxcEYAG+3eWSgxmNr2uYNl25M/e1lluZwRkOd0oeLWOlryElsk6h4W6UM+AQbvyY0jObEbk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="9394e5eb4c3fcb4044c4a2540f8269ea1d205665" Description="" Url=""><as:assemblyIdentity name="CheckIn Turnos.exe" version="1.0.0.2" publicKeyToken="a9640cdae965b7c9" language="neutral" processorArchitecture="x86" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=Martin-W7\Martin</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>oiDMx6iz4uZ0y+CnYwsonvWVLNU=</DigestValue></Reference></SignedInfo><SignatureValue>K1JptrPRqNs1NfSTif98eG5rol2IIzyVyw27+gU/SB0Whce8WlG/0yIpe2vITkuectM/qrYAjRHvTYV/Fk5TX/P4x9M3kEYh7G5r1IQ/aDvibZfq6WQ+bWTNKZVKHVd95afnHmRcOgpnUbRdvRURbYg5eh+PiwbKNq5g1bH8x/4=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>qrpkpKVBAXOCEltRhBD5/U7XdZlcMYxtbj7WLs4jteTq41UsVT+THPNC4cCr/5yatVtZ9+dDftC2ABGbNyKEuyRUevwgJdXIeomfqxcEYAG+3eWSgxmNr2uYNl25M/e1lluZwRkOd0oeLWOlryElsk6h4W6UM+AQbvyY0jObEbk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB2TCCAUKgAwIBAgIQKlQG521214xH7vg5JefZxDANBgkqhkiG9w0BAQUFADArMSkwJwYDVQQDHiAATQBhAHIAdABpAG4ALQBXADcAXABNAGEAcgB0AGkAbjAeFw0xMjAxMjcxNDQzMjhaFw0xMzAxMjYyMDQzMjhaMCsxKTAnBgNVBAMeIABNAGEAcgB0AGkAbgAtAFcANwBcAE0AYQByAHQAaQBuMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCqumSkpUEBc4ISW1GEEPn9Ttd1mVwxjG1uPtYuziO15OrjVSxVP5Mc80LhwKv/nJq1W1n350N+0LYAEZs3IoS7JFR6/CAl1ch6iZ+rFwRgAb7d5ZKDGY2va5g2Xbkz97WWW5nBGQ53Sh4tY6WvISWyTqHhbpQz4BBu/JjSM5sRuQIDAQABMA0GCSqGSIb3DQEBBQUAA4GBACng+kbvc7XptI3iS8yr3BUBieQ112WNdq+WuBX7tiC9espRlNTr8/pSzR38IMNNzefVYrZ7NIscO+azKxuUs4o8qMsCGuN0TNu8P22OT1HpmSOk08eYaEoxrfKIfhXqNXubfDC9GEMZPnUhV3pcvzcqLZMIDGPagAtPbNl0rGSI</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

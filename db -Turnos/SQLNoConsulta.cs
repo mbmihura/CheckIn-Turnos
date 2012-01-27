@@ -10,13 +10,15 @@ namespace dbTurnos.DataSQL
     /// <summary>Objeto que ejecuta una sentencia SQL que no devuelve datos de por si (SqlCommand.ExecuteNonQuery).</summary>
     public class SQLNoConsulta
     {
-        //TODO: extraer cadena conexin para abstraer clase
-
+        private static string _cadenaConexion = "";
+        public static string CadenaConexion { get { return _cadenaConexion; } set { _cadenaConexion = value; } }
+        
         private string _sentencia;
 
         /// <summary>Objeto que ejecuta una sentencia SQL que no devuelve datos de por si (SqlCommand.ExecuteNonQuery).</summary>
-        /// <exception cref="System.InvalidOperationException"></exception>
-        /// <exception cref="System.Data.OleDb.OleDbException"></exception>
+        /// <exception cref="System.InvalidOperationException">Puede ocurrir al abrir la conexion con, o al intentar extraer los datos de la BD.</exception>
+        /// <exception cref="System.Data.OleDb.OleDbException">Solo puede ocurrir al abrir la conexion con la DB.</exception>
+        /// <exception cref="dbTurnos.DataSQL.CadenaDeConexionNoDefinida">Ocurre al intentar instanciar un objeto de esta clase sin previamente definir la propiedad CadenaDeConexión.</exception>
         public SQLNoConsulta(string sentencia)
         {
             _sentencia = sentencia;
@@ -28,7 +30,9 @@ namespace dbTurnos.DataSQL
         /// <exception cref="System.Data.OleDb.OleDbException"></exception>
         public int Ejecutar()
         {
-            using (OleDbConnection conexion = new OleDbConnection(new Properties.Settings().Bar_TurnosConnectionString))
+            if (CadenaConexion == "")
+                throw new CadenaDeConexionNoDefinida();
+            using (OleDbConnection conexion = new OleDbConnection(CadenaConexion))
             {
                 OleDbCommand comandoSql = new OleDbCommand(_sentencia, conexion);
                 try

@@ -121,6 +121,20 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="NotificacionIma_lbl.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        R0lGODlhEAAQAIYAAAEAACHXKACSCzrHHCOvKhWvFQahEACQBBjFIQWSCoDkXyLZKJDzMwCWC1nPFhjU
+        ICDWJ0bKGTLFHHroHnP5eEvMFyLaKZT/lpHxHGvdWHPbOjfaJgCTChKvFbn/qQCVClHhJD/bIxWmHwKb
+        DV3hISGjK1zPFgCSCnP5dwCPAA6YE7P/npHwGHHnIT/eKCfXKASfDyjYJijZKInnZyPZKXPcO1PfIyTW
+        JmXmJ1zhIyLXKHjoHjXbJm/mH3HfWZr/lD/cJVTeIgCTCXDmIEnhNgCTBQAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEBAAAh+QQB
+        AAAAACwAAAAAEAAQAAAIggABCBxIsKDBgwgTKlyoUEQRhgAIoAhgYOCAAwZTUHgQYEHFARpmYBxI4AKE
+        AAhKABhQgwUDBQkEqvhxI4CFDwIFmMAwoYePBAQ8xNCBQAhBAQ52DMGRYQWRFzQaGBRQoQWJICE2yBiB
+        8ESEHDaA8IChUMAAEC46MOQgoQBEAG4RBgQAOw==
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA

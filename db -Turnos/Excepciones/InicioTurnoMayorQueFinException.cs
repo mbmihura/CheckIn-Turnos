@@ -7,5 +7,8 @@ namespace dbTurnos.Excepciones
 {
     public class InicioTurnoMayorQueFinException : Exception
     {
+        public InicioTurnoMayorQueFinException(string p) : base (p)
+        {
+        }
     }
 }

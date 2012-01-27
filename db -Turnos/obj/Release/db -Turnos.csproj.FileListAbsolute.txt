@@ -1,0 +1,7 @@
+C:\Users\Martin\Proyectos\CheckIn Turnos\db -Turnos\bin\Release\Bar Turnos.accdb
+C:\Users\Martin\Proyectos\CheckIn Turnos\db -Turnos\bin\Release\db -Turnos.dll.config
+C:\Users\Martin\Proyectos\CheckIn Turnos\db -Turnos\bin\Release\db -Turnos.dll
+C:\Users\Martin\Proyectos\CheckIn Turnos\db -Turnos\bin\Release\db -Turnos.pdb
+C:\Users\Martin\Proyectos\CheckIn Turnos\db -Turnos\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Martin\Proyectos\CheckIn Turnos\db -Turnos\obj\Release\db -Turnos.dll
+C:\Users\Martin\Proyectos\CheckIn Turnos\db -Turnos\obj\Release\db -Turnos.pdb

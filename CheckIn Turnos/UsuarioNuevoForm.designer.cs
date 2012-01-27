@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ingresoManual_pnl.SuspendLayout();
+
             ((System.ComponentModel.ISupportInitialize)(this.accion_pic)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -55,8 +55,7 @@
             this.ClientSize = new System.Drawing.Size(597, 265);
             this.Name = "UsuarioNuevoForm";
             this.Text = "Usuario Nuevo";
-            this.ingresoManual_pnl.ResumeLayout(false);
-            this.ingresoManual_pnl.PerformLayout();
+
             ((System.ComponentModel.ISupportInitialize)(this.accion_pic)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

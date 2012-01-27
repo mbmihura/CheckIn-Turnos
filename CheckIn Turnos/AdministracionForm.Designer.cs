@@ -125,7 +125,7 @@
             this.modificar_cmd.TabIndex = 5;
             this.modificar_cmd.Text = "Modificar";
             this.modificar_cmd.UseVisualStyleBackColor = true;
-            this.modificar_cmd.Click += new System.EventHandler(this.modificar_cmd_Click_1);
+            this.modificar_cmd.Click += new System.EventHandler(this.modificar_cmd_Click);
             // 
             // eliminar_cmd
             // 
@@ -151,6 +151,7 @@
             this.nuevo_cmd.TabIndex = 3;
             this.nuevo_cmd.Text = "Nuevo";
             this.nuevo_cmd.UseVisualStyleBackColor = true;
+            this.nuevo_cmd.Click += new System.EventHandler(this.nuevo_cmd_Click);
             // 
             // explicacion_lbl
             // 
@@ -330,6 +331,7 @@
             this.salir_cmd.TabIndex = 8;
             this.salir_cmd.Text = "Salir";
             this.salir_cmd.UseVisualStyleBackColor = true;
+            this.salir_cmd.Click += new System.EventHandler(this.salir_cmd_Click);
             // 
             // Configuracion_lkl
             // 
@@ -341,6 +343,7 @@
             this.Configuracion_lkl.TabIndex = 12;
             this.Configuracion_lkl.TabStop = true;
             this.Configuracion_lkl.Text = "Configuración";
+            this.Configuracion_lkl.Visible = false;
             this.Configuracion_lkl.VisitedLinkColor = System.Drawing.Color.Blue;
             // 
             // exportar_sfd

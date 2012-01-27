@@ -1,38 +1,58 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 
 namespace dbTurnos
 {
-    public static class Log
+    public class LoadingLog2FileException : Exception
     {
-        public static void Error(string message, string module)
-        {
-            WriteEntry(message, "error  ", module);
-        }
+        public LoadingLog2FileException(Exception innerException) : base("Ocurrio un error al cargar el sistema de registro de eventos, el cual se encarga de monitorear y registrar posibles errores de la aplicacion." + Environment.NewLine + "Puede usar a aplicacion detodas formas pero el sistema de registro de eventos sera desactivado hasta que se reinicie la aplicación.", innerException) { }
+    }
 
-        public static void Error(Exception ex, string module)
-        {
-            WriteEntry(ex.Message, "error  ", module);
-        }
+    /// <summary>
+    /// Listener/Log que escribe a un archivo txt.
+    /// </summary>
+    public class Log2File : TextWriterTraceListener
+    {
+        private bool _activado = true;
+        public bool Acivado { set { _activado = value; } get { return _activado; } }
 
-        public static void Warning(string message, string module)
+        /// <exception cref="dbTurnos.LoadingLog2FileException">Ocurre cuando el no se puede crear el logFile, y/o su listener. Encapsula el error original.</exception>
+        public Log2File(string filePath, bool addToTraceListenersList):base(filePath)
         {
-            WriteEntry(message, "warning", module);
+            try
+            {
+                // Creates the new trace listener.
+                if (addToTraceListenersList)
+                    Trace.Listeners.Add(this); ;
+            }
+            catch (Exception ex)
+            {
+                throw new LoadingLog2FileException(ex);
+            }
         }
-
-        public static void Info(string message, string module)
+        public override void WriteLine(string msg)
         {
-            WriteEntry(message, "info   ", module);
+            if (_activado)
+                base.WriteLine(string.Format("{0:G}: {1}", System.DateTime.Now, msg));
         }
-
-        private static void WriteEntry(string message, string type, string module)
+        public void TraceException(Exception ex, string msg = "")
         {
-            Trace.WriteLine(
-                    string.Format("{0} {1} {2}: {3}",
-                                  DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
-                                  type,
-                                  module,
-                                  message));
+            if (msg == "")
+                WriteLine(string.Format("{1} {2}: {3} ({4})", ex.Source,ex.TargetSite, ex.Message, ex.StackTrace));
+            else
+                WriteLine(string.Format("{1} {2}: [msg: {3}] {4} ({5})", ex.Source, ex.TargetSite,msg , ex.Message, ex.StackTrace));
+
+            if (ex.InnerException != null)
+            {
+                IndentLevel += 1;
+                TraceException(ex.InnerException);
+                IndentLevel -= 1;
+            }
+            Trace.Flush();
         }
     }
+
+    
+
 }

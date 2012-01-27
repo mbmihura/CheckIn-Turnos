@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using CheckIn_Turnos.Excepciones;
+using dbTurnos;
+using dbTurnos.Excepciones;
 
 namespace CheckIn_Turnos
 {
@@ -14,7 +16,6 @@ namespace CheckIn_Turnos
     public partial class UsuarioModificarForm : Form
     {
         private bool _mostrandoContrasenia;
-        private bool _mostrandoCodigo;
         protected string _contraseniaPrevia;
 
         public UsuarioModificarForm()
@@ -27,13 +28,6 @@ namespace CheckIn_Turnos
         {
             Close();
         }
-
-        private void cancelarContraseña_cmd_Click(object sender, EventArgs e)
-        {
-            ingresoManual_pnl.Hide();
-            contraseniaAnterior_flp.Show();
-        }
-
         
         //Alterna entre los modos mostrar contraseña y introducirla dos veces
         private void mostrarCaracteres_lnk_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -55,53 +49,90 @@ namespace CheckIn_Turnos
             }
         }
 
-        private void cambioModoIngresoContraseña_lnk_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        protected bool validarNombre(bool pintarFondo) 
         {
-            contrasenia1_txt.Text = "";
-            contrasenia2_txt.Text = "";
-            ingresoManual_pnl.Show();
-            contraseniaAnterior_flp.Hide();
+            if (nombre_txt.Text == "")
+            {
+                nombre_txt.Focus();
+                nombreValidacion_lbl.Show();
+                if (pintarFondo)
+                    nombre_txt.BackColor = Color.FromArgb(250, 234, 234);
+                return false;
+            }
+            nombreValidacion_lbl.Hide();
+            nombre_txt.BackColor = SystemColors.Window;
+            return true;
         }
 
-        private void mostrarCodigo_lnk_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        /// <exception cref="System.InvalidOperationException"></exception>
+        /// <exception cref="System.Data.OleDb.OleDbException"></exception>
+        /// <exception cref="dbTurnos.Excepciones.NoExisteUsuarioException"></exception>
+        /// <exception cref="System.FormatException"></exception>
+        /// <exception cref="System.InvalidCastException"></exception>
+        /// <exception cref="System.OverflowException"></exception>
+        protected bool validarUsuario(bool pintarFondo) 
         {
-            _mostrandoCodigo = !_mostrandoCodigo;
-            if (_mostrandoCodigo) {
-            mostrarCodigo_lnk.Text = "Ocultar";   
-            //TODO: tipo_lbl.Text =?? + " (" + ?? tipo + ")";
-            } else {
-                mostrarCodigo_lnk.Text = "Mostrar";   
-            //TODO: tipo_lbl.Text = ??;
-            }
-        }
-
-        /// <summary>Devuelve con que contraseña se debe guardar el usuario, si con la previa o si se selecciono una nueva.</summary>
-        /// <returns>Contraseña Actual</returns>
-        /// <exception cref="ContraseniaNoCoincidenException">Si las contraseñas son diferentes, se informa al usuario, y luego lanza un excepcion.</exception>
-        protected string DeterminarContraseniaActual()
-        {
-            //Si contraseniaAnterior_flp esta visible, la contraseña no cambio. Si no, determinar una nueva contraseña y su SHA256 a partir del string introducido.
-            if (contraseniaAnterior_flp.Visible)
+            try
             {
-                return _contraseniaPrevia;
-            }
-            else 
-            {
-                //Cuando no se muestra la contraseña, validad que coincian antes de cambiarla
-                if (_mostrandoContrasenia || contrasenia1_txt.Text == contrasenia2_txt.Text)
+                if (usuario_txt.Text == "")
                 {
-                    //TODO: impactar DB.
-                    return contrasenia1_txt.Text ;
+                    usuarioValidacion_lbl.Text = "El usuario no puede estar vacio.";    
                 }
                 else
                 {
-                    //informa err. y limpiar
-                    MessageBox.Show("Las contraseñas no coinciden. Escribalas nuevamente.", "Cambiar Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    contrasenia1_txt.Text = "";
-                    contrasenia2_txt.Text = "";
-                    throw new ContraseniasNoCoincidenException();
+                    InterfazDb.getUsuarioId(usuario_txt.Text);
                 }
+                usuarioValidacion_lbl.Show();
+                if (pintarFondo)
+                    usuario_txt.BackColor = Color.FromArgb(250, 234, 234);
+                return false;
             }
+            catch (NoExisteUsuarioException)
+            {
+                nombreValidacion_lbl.Hide();
+                nombre_txt.BackColor = SystemColors.Window;
+                return true;
+            }
+        }
+        protected bool validarContraseña(bool pintarFondo) 
+        {
+            if ((_mostrandoContrasenia | contrasenia1_txt.Text == contrasenia2_txt.Text) && contrasenia1_txt.Text != "")
+            {
+                nombreValidacion_lbl.Hide();
+                nombre_txt.BackColor = SystemColors.Window;
+                return true;
+            }
+            if (!_mostrandoContrasenia && contrasenia1_txt.Text != contrasenia2_txt.Text)
+                contraseñaValidacion_lbl.Text = "Las contraseñas no coinciden.";
+            else
+                contraseñaValidacion_lbl.Text = "La contraseña no puede estar vacia.";
+            contrasenia1_txt.Focus();
+            contraseñaValidacion_lbl.Show();
+            if (pintarFondo)
+                usuario_txt.BackColor = Color.FromArgb(250, 234, 234);
+            return false;
+        }
+
+        private void nombre_txt_TextChanged(object sender, EventArgs e)
+        {
+            validarNombre(false);
+        }
+
+        private void usuario_txt_TextChanged(object sender, EventArgs e)
+        {
+            validarUsuario(false);
+        }
+
+        private void contrasenia2_txt_TextChanged(object sender, EventArgs e)
+        {
+            validarContraseña(false);
+        }
+
+        private void contrasenia1_txt_TextChanged(object sender, EventArgs e)
+        {
+            if (contrasenia2_txt.Text != "")
+                validarContraseña(false);
         }
     }
 }
+        

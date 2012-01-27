@@ -5,7 +5,8 @@ using System.Text;
 
 namespace dbTurnos.Excepciones
 {
-    class ContraseñaNoPuedeSerNula : Exception
+    public class ContraseñaNoPuedeSerNula : Exception
     {
+        public ContraseñaNoPuedeSerNula() : base("La contraseña no puede estar vacia, por favor complete la misma.") { }
     }
 }
