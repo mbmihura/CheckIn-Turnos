@@ -45,6 +45,8 @@
             this.notificacion_pnl = new System.Windows.Forms.Panel();
             this.notificacion_lbl = new System.Windows.Forms.Label();
             this.NotificacionIma_lbl = new System.Windows.Forms.Label();
+            this.notificacion_tmr = new System.Windows.Forms.Timer(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.Panel1.SuspendLayout();
             this.notificacion_pnl.SuspendLayout();
             this.SuspendLayout();
@@ -56,9 +58,10 @@
             this.contrasenia_cmd.Location = new System.Drawing.Point(12, 355);
             this.contrasenia_cmd.Name = "contrasenia_cmd";
             this.contrasenia_cmd.Size = new System.Drawing.Size(132, 27);
-            this.contrasenia_cmd.TabIndex = 31;
-            this.contrasenia_cmd.Text = "Cambiar contraseña";
+            this.contrasenia_cmd.TabIndex = 3;
+            this.contrasenia_cmd.Text = "Ca&mbiar contraseña";
             this.contrasenia_cmd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.contrasenia_cmd, "Presione la tecla \'M\' para cambiar la contraseña de un usuario.");
             this.contrasenia_cmd.UseVisualStyleBackColor = true;
             this.contrasenia_cmd.Click += new System.EventHandler(this.contrasenia_cmd_Click);
             // 
@@ -98,9 +101,10 @@
             this.CerrarTurno_cmd.Location = new System.Drawing.Point(173, 3);
             this.CerrarTurno_cmd.Name = "CerrarTurno_cmd";
             this.CerrarTurno_cmd.Size = new System.Drawing.Size(135, 48);
-            this.CerrarTurno_cmd.TabIndex = 4;
-            this.CerrarTurno_cmd.Text = "Cerrar Turno";
+            this.CerrarTurno_cmd.TabIndex = 2;
+            this.CerrarTurno_cmd.Text = "&Cerrar Turno";
             this.CerrarTurno_cmd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.CerrarTurno_cmd, "Presione la tecla \'C\' para cerrar un turno actualmente abierto");
             this.CerrarTurno_cmd.UseVisualStyleBackColor = true;
             this.CerrarTurno_cmd.Click += new System.EventHandler(this.CerrarTurno_cmd_Click);
             // 
@@ -112,9 +116,10 @@
             this.abrirTurno_cmd.Location = new System.Drawing.Point(3, 3);
             this.abrirTurno_cmd.Name = "abrirTurno_cmd";
             this.abrirTurno_cmd.Size = new System.Drawing.Size(135, 48);
-            this.abrirTurno_cmd.TabIndex = 3;
-            this.abrirTurno_cmd.Text = "Abrir Turno";
+            this.abrirTurno_cmd.TabIndex = 0;
+            this.abrirTurno_cmd.Text = "&Abrir Turno";
             this.abrirTurno_cmd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.abrirTurno_cmd, "Presione la tecla \'A\' para abrir un turno.");
             this.abrirTurno_cmd.UseVisualStyleBackColor = true;
             this.abrirTurno_cmd.Click += new System.EventHandler(this.abrirTurno_cmd_Click);
             // 
@@ -123,8 +128,9 @@
             this.administracion_cmd.Location = new System.Drawing.Point(316, 355);
             this.administracion_cmd.Name = "administracion_cmd";
             this.administracion_cmd.Size = new System.Drawing.Size(132, 27);
-            this.administracion_cmd.TabIndex = 28;
-            this.administracion_cmd.Text = "Administración";
+            this.administracion_cmd.TabIndex = 4;
+            this.administracion_cmd.Text = "A&dministración";
+            this.toolTip1.SetToolTip(this.administracion_cmd, "Presione la tecla \'D\' para entrar a las funciones administrativas.");
             this.administracion_cmd.UseVisualStyleBackColor = true;
             this.administracion_cmd.Click += new System.EventHandler(this.administracion_cmd_Click);
             // 
@@ -141,7 +147,7 @@
             this.turnos_lv.Name = "turnos_lv";
             this.turnos_lv.ShowGroups = false;
             this.turnos_lv.Size = new System.Drawing.Size(436, 224);
-            this.turnos_lv.TabIndex = 27;
+            this.turnos_lv.TabIndex = 5;
             this.turnos_lv.UseCompatibleStateImageBehavior = false;
             this.turnos_lv.View = System.Windows.Forms.View.Details;
             this.turnos_lv.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.turnos_lv_MouseDoubleClick);
@@ -164,7 +170,7 @@
             // horaYTurnosAbiertos_tmr
             // 
             this.horaYTurnosAbiertos_tmr.Enabled = true;
-            this.horaYTurnosAbiertos_tmr.Interval = 10000;
+            this.horaYTurnosAbiertos_tmr.Interval = 5000;
             this.horaYTurnosAbiertos_tmr.Tick += new System.EventHandler(this.horaYTurnosAbiertos_tmr_Tick);
             // 
             // notificacion_pnl
@@ -176,7 +182,7 @@
             this.notificacion_pnl.Controls.Add(this.NotificacionIma_lbl);
             this.notificacion_pnl.Location = new System.Drawing.Point(15, 321);
             this.notificacion_pnl.Name = "notificacion_pnl";
-            this.notificacion_pnl.Size = new System.Drawing.Size(245, 25);
+            this.notificacion_pnl.Size = new System.Drawing.Size(281, 25);
             this.notificacion_pnl.TabIndex = 33;
             this.notificacion_pnl.Visible = false;
             // 
@@ -187,7 +193,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.notificacion_lbl.Location = new System.Drawing.Point(41, 0);
             this.notificacion_lbl.Name = "notificacion_lbl";
-            this.notificacion_lbl.Size = new System.Drawing.Size(203, 23);
+            this.notificacion_lbl.Size = new System.Drawing.Size(239, 23);
             this.notificacion_lbl.TabIndex = 18;
             this.notificacion_lbl.Text = "Turno abierto para usuario.";
             this.notificacion_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -206,13 +212,19 @@
             this.NotificacionIma_lbl.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.NotificacionIma_lbl.Location = new System.Drawing.Point(-1, 0);
             this.NotificacionIma_lbl.Name = "NotificacionIma_lbl";
-            this.NotificacionIma_lbl.Size = new System.Drawing.Size(48, 23);
+            this.NotificacionIma_lbl.Size = new System.Drawing.Size(44, 23);
             this.NotificacionIma_lbl.TabIndex = 17;
             this.NotificacionIma_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.NotificacionIma_lbl.Click += new System.EventHandler(this.NotificacionIma_lbl_Click);
             // 
+            // notificacion_tmr
+            // 
+            this.notificacion_tmr.Interval = 5000;
+            this.notificacion_tmr.Tick += new System.EventHandler(this.notificacion_tmr_Tick);
+            // 
             // TurnosForm
             // 
+            this.AcceptButton = this.abrirTurno_cmd;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(460, 391);
@@ -252,6 +264,8 @@
         internal System.Windows.Forms.Panel notificacion_pnl;
         private System.Windows.Forms.Label notificacion_lbl;
         internal System.Windows.Forms.Label NotificacionIma_lbl;
+        private System.Windows.Forms.Timer notificacion_tmr;
+        private System.Windows.Forms.ToolTip toolTip1;
 
     }
 }

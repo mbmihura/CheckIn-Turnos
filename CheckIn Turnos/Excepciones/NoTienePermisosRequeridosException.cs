@@ -7,5 +7,9 @@ namespace CheckIn_Turnos.Excepciones
 {
     class NoTienePermisosRequeridosException : Exception
     {
+        public NoTienePermisosRequeridosException(string mensaje)
+            : base(mensaje)
+        {
+        }
     }
 }

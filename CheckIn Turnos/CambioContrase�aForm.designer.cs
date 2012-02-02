@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CambioContraseñaForm));
             this.cancelar_cmd = new System.Windows.Forms.Button();
             this.mostrar_lnk = new System.Windows.Forms.LinkLabel();
@@ -38,8 +39,9 @@
             this.ingreseContraseña_lbl = new System.Windows.Forms.Label();
             this.editar_pic = new System.Windows.Forms.PictureBox();
             this.cambioRequerido_pnl = new System.Windows.Forms.Panel();
-            this.cambioRequeridoIma_lbl = new System.Windows.Forms.Label();
             this.cambioRequerido_lbl = new System.Windows.Forms.Label();
+            this.cambioRequeridoIma_lbl = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.editar_pic)).BeginInit();
             this.cambioRequerido_pnl.SuspendLayout();
             this.SuspendLayout();
@@ -53,11 +55,11 @@
             this.cancelar_cmd.Location = new System.Drawing.Point(12, 104);
             this.cancelar_cmd.Name = "cancelar_cmd";
             this.cancelar_cmd.Size = new System.Drawing.Size(75, 25);
-            this.cancelar_cmd.TabIndex = 23;
-            this.cancelar_cmd.Text = "Cancelar";
+            this.cancelar_cmd.TabIndex = 4;
+            this.cancelar_cmd.Text = "&Cancelar";
             this.cancelar_cmd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.cancelar_cmd, "Presione la tecla \'Esc\' para salir sin guardar.");
             this.cancelar_cmd.UseVisualStyleBackColor = true;
-            this.cancelar_cmd.Click += new System.EventHandler(this.cancelar_cmd_Click);
             // 
             // mostrar_lnk
             // 
@@ -69,6 +71,7 @@
             this.mostrar_lnk.TabIndex = 21;
             this.mostrar_lnk.TabStop = true;
             this.mostrar_lnk.Text = "Mostrar";
+            this.toolTip1.SetToolTip(this.mostrar_lnk, "Haga click alternar entre mostrar y ocultar la contraseña que ingresó.");
             this.mostrar_lnk.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.mostrar_lnk_LinkClicked);
             // 
             // aceptar_cmd
@@ -79,9 +82,10 @@
             this.aceptar_cmd.Location = new System.Drawing.Point(261, 103);
             this.aceptar_cmd.Name = "aceptar_cmd";
             this.aceptar_cmd.Size = new System.Drawing.Size(75, 25);
-            this.aceptar_cmd.TabIndex = 20;
+            this.aceptar_cmd.TabIndex = 2;
             this.aceptar_cmd.Text = "Guardar";
             this.aceptar_cmd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.aceptar_cmd, "Presione la tecla Enter para guardar y salir.");
             this.aceptar_cmd.UseVisualStyleBackColor = true;
             this.aceptar_cmd.Click += new System.EventHandler(this.aceptar_cmd_Click);
             // 
@@ -92,7 +96,8 @@
             this.contrasenia2_txt.Location = new System.Drawing.Point(69, 67);
             this.contrasenia2_txt.Name = "contrasenia2_txt";
             this.contrasenia2_txt.Size = new System.Drawing.Size(211, 20);
-            this.contrasenia2_txt.TabIndex = 19;
+            this.contrasenia2_txt.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.contrasenia2_txt, "Repita la contraseña ingresada previamente.");
             this.contrasenia2_txt.UseSystemPasswordChar = true;
             // 
             // ingreseContra2_lbl
@@ -112,7 +117,8 @@
             this.contrasenia1_txt.Location = new System.Drawing.Point(69, 25);
             this.contrasenia1_txt.Name = "contrasenia1_txt";
             this.contrasenia1_txt.Size = new System.Drawing.Size(211, 20);
-            this.contrasenia1_txt.TabIndex = 17;
+            this.contrasenia1_txt.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.contrasenia1_txt, "Ingrese su nueva contraseña.");
             this.contrasenia1_txt.UseSystemPasswordChar = true;
             // 
             // ingreseContraseña_lbl
@@ -150,6 +156,19 @@
             this.cambioRequerido_pnl.TabIndex = 25;
             this.cambioRequerido_pnl.Visible = false;
             // 
+            // cambioRequerido_lbl
+            // 
+            this.cambioRequerido_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.cambioRequerido_lbl.Location = new System.Drawing.Point(53, 0);
+            this.cambioRequerido_lbl.Name = "cambioRequerido_lbl";
+            this.cambioRequerido_lbl.Size = new System.Drawing.Size(284, 52);
+            this.cambioRequerido_lbl.TabIndex = 18;
+            this.cambioRequerido_lbl.Text = "Debe cambiar su contraseña por una nueva antes de serguir utilizando el sistema, " +
+                "ya que uno de los administradores solicitó que se hiciera.";
+            this.cambioRequerido_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // cambioRequeridoIma_lbl
             // 
             this.cambioRequeridoIma_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
@@ -166,19 +185,6 @@
             this.cambioRequeridoIma_lbl.Size = new System.Drawing.Size(48, 52);
             this.cambioRequeridoIma_lbl.TabIndex = 17;
             this.cambioRequeridoIma_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // cambioRequerido_lbl
-            // 
-            this.cambioRequerido_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.cambioRequerido_lbl.Location = new System.Drawing.Point(53, 0);
-            this.cambioRequerido_lbl.Name = "cambioRequerido_lbl";
-            this.cambioRequerido_lbl.Size = new System.Drawing.Size(284, 52);
-            this.cambioRequerido_lbl.TabIndex = 18;
-            this.cambioRequerido_lbl.Text = "Debe cambiar su contraseña por una nueva, ya que uno de los administradores solic" +
-                "itó que se hiciera la proxima ves que usuario usara el sistema.";
-            this.cambioRequerido_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // CambioContraseñaForm
             // 
@@ -223,6 +229,7 @@
         internal System.Windows.Forms.Panel cambioRequerido_pnl;
         private System.Windows.Forms.Label cambioRequerido_lbl;
         internal System.Windows.Forms.Label cambioRequeridoIma_lbl;
+        private System.Windows.Forms.ToolTip toolTip1;
 
     }
 }

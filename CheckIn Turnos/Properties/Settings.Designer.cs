@@ -22,17 +22,5 @@ namespace CheckIn_Turnos.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\"C:\\Users\\Martin\\Proyectos\\CheckIn " +
-            "Turnos\\db -Turnos\\Bar Turnos.accdb\";Persist Security Info=True;Jet OLEDB:Databas" +
-            "e Password=We34*tr9")]
-        public string Bar_TurnosConnectionString {
-            get {
-                return ((string)(this["Bar_TurnosConnectionString"]));
-            }
-        }
     }
 }

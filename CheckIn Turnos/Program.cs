@@ -18,9 +18,10 @@ namespace CheckIn_Turnos
             Application.SetCompatibleTextRenderingDefault(false);
             try
             {
-                Log2File log = new Log2File(Application.StartupPath + "\\Exceptions.log", false);
+                Log2File log = new Log2File(Application.StartupPath + "\\AppException.log", false);
+                log.WriteLine("INICIA APPLICACION ...........................");
                 InterfazDb.Iniciar(Application.StartupPath, log);
-                ErrorHandlerForUserInterface.logTo(log);
+                ErrorHandlerForGUI.LogTo(log);
             }
             catch (LoadingLog2FileException ex)
             {

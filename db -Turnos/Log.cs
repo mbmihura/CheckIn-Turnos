@@ -34,14 +34,14 @@ namespace dbTurnos
         public override void WriteLine(string msg)
         {
             if (_activado)
-                base.WriteLine(string.Format("{0:G}: {1}", System.DateTime.Now, msg));
+                base.WriteLine(string.Format("{0:yy/MM/dd HH:mm:ss}    {1}", System.DateTime.Now, msg));
         }
         public void TraceException(Exception ex, string msg = "")
         {
             if (msg == "")
-                WriteLine(string.Format("{1} {2}: {3} ({4})", ex.Source,ex.TargetSite, ex.Message, ex.StackTrace));
+                WriteLine(string.Format("{0}  ({1} - {2}): {3} ({4})",ex.GetType(), ex.Source,ex.TargetSite, ex.Message, ex.StackTrace));
             else
-                WriteLine(string.Format("{1} {2}: [msg: {3}] {4} ({5})", ex.Source, ex.TargetSite,msg , ex.Message, ex.StackTrace));
+                WriteLine(string.Format("{0}  ({1} - {2}): [msg: {3}] {4} ({5})",ex.GetType(), ex.Source, ex.TargetSite,msg , ex.Message, ex.StackTrace));
 
             if (ex.InnerException != null)
             {
@@ -49,7 +49,7 @@ namespace dbTurnos
                 TraceException(ex.InnerException);
                 IndentLevel -= 1;
             }
-            Trace.Flush();
+            Flush();
         }
     }
 

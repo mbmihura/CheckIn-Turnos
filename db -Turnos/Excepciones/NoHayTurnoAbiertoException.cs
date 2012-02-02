@@ -7,6 +7,6 @@ namespace dbTurnos.Excepciones
 {
     public class NoHayTurnoAbiertoException : Exception
     {
-        public NoHayTurnoAbiertoException() : base("No tiene ningún turno abierto que cerrar.") { }
+        public NoHayTurnoAbiertoException(string mensaje) : base(mensaje) { }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.ingresar_cmd = new System.Windows.Forms.Button();
             this.contrasenia_txt = new System.Windows.Forms.TextBox();
             this.usuario_txt = new System.Windows.Forms.TextBox();
@@ -35,6 +36,7 @@
             this.usuario_lbl = new System.Windows.Forms.Label();
             this.explicacion_lbl = new System.Windows.Forms.Label();
             this.candado_pic = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.candado_pic)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,8 +45,9 @@
             this.ingresar_cmd.Location = new System.Drawing.Point(159, 87);
             this.ingresar_cmd.Name = "ingresar_cmd";
             this.ingresar_cmd.Size = new System.Drawing.Size(75, 23);
-            this.ingresar_cmd.TabIndex = 20;
+            this.ingresar_cmd.TabIndex = 2;
             this.ingresar_cmd.Text = "Ingresar";
+            this.toolTip1.SetToolTip(this.ingresar_cmd, "Presione la tecla Enter para continuar.");
             this.ingresar_cmd.UseVisualStyleBackColor = true;
             this.ingresar_cmd.Click += new System.EventHandler(this.ingresar_cmd_Click);
             // 
@@ -53,7 +56,8 @@
             this.contrasenia_txt.Location = new System.Drawing.Point(159, 61);
             this.contrasenia_txt.Name = "contrasenia_txt";
             this.contrasenia_txt.Size = new System.Drawing.Size(132, 20);
-            this.contrasenia_txt.TabIndex = 19;
+            this.contrasenia_txt.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.contrasenia_txt, "Ingrese su contraseña.");
             this.contrasenia_txt.UseSystemPasswordChar = true;
             // 
             // usuario_txt
@@ -61,7 +65,8 @@
             this.usuario_txt.Location = new System.Drawing.Point(159, 35);
             this.usuario_txt.Name = "usuario_txt";
             this.usuario_txt.Size = new System.Drawing.Size(132, 20);
-            this.usuario_txt.TabIndex = 18;
+            this.usuario_txt.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.usuario_txt, "Ingrese su usuario.");
             // 
             // contraseña_lbl
             // 
@@ -135,5 +140,6 @@
         internal System.Windows.Forms.Label explicacion_lbl;
         internal System.Windows.Forms.PictureBox candado_pic;
         protected System.Windows.Forms.Button ingresar_cmd;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

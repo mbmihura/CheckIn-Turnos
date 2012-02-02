@@ -7,5 +7,6 @@ namespace dbTurnos.Excepciones
 {
     public class ParUsuarioContraseñaIncorrectoException : Exception
     {
+        public ParUsuarioContraseñaIncorrectoException() : base("Usuario y/o contraseña incorrecto. ") { }
     }
 }

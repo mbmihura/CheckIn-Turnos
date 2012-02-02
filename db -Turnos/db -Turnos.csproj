@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
@@ -60,6 +61,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Excepciones\YaTieneTurnoAbiertoException.cs" />
+    <Compile Include="Excepciones\UsuarioSuspendidoException.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -69,9 +71,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bar Turnos.accdb">
+    <Content Include="Bar Turnos.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

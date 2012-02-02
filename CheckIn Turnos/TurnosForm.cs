@@ -14,12 +14,19 @@ namespace CheckIn_Turnos
 {
     public partial class TurnosForm : Form
     {
+        static bool _actualizarTurnos = true;
         public TurnosForm()
         {
             InitializeComponent();
             ActualizarHoraYTiempos();
             ActualizarTurnos();
+            
         }
+
+        public static bool DetenerTimers { set {
+            foreach TurnosForm tf in TurnosForm. 
+                ;
+                = !value; } }
 
 #region Funcionales (Sin manejo de excepciones)
 
@@ -38,7 +45,9 @@ namespace CheckIn_Turnos
                 {
                     id = new IdentificacionForm("Abrir Turno").ShowDialog(this);
                     InterfazDb.AbrirTurno(id, entrada);
-                    notificacion_lbl.Text = "Turno abierto para " + InterfazDb.UsuarioGetNombre(id) + " a las " + entrada.ToShortTimeString() + ".";
+                    notificacion_lbl.Text = "Turno abierto para " + InterfazDb.UsuarioGetNombre(id) + " a las " + entrada.ToShortTimeString();
+                    notificacion_tmr.Interval = 5000;
+                    notificacion_tmr.Start();
                     notificacion_pnl.Show();
                 }
                 catch (YaTieneTurnoAbiertoException ex)
@@ -47,23 +56,25 @@ namespace CheckIn_Turnos
                 }
                 ActualizarTurnos();
             };
-            ErrorHandlerForUserInterface.intentar(abrirTurno);
+            ErrorHandlerForGUI.intentar(abrirTurno);
         }
-        private void CerrarTurno(string usuario = "")
+        private void CerrarTurno(string nombre = "")
         {
             Action cerrarTurno = () =>
             {
                 DateTime salida = DateTime.Now;
                 IdentificacionForm idForm = new IdentificacionForm("Cerrar Turno");
                 int id;
-                if (usuario == "")
+                if (nombre == "")
                     id = idForm.ShowDialog(this);
                 else
-                    id = idForm.ShowDialog(usuario, this);
+                    id = idForm.ShowDialog(nombre, this);
                 try
                 {
                     InterfazDb.CerrarTurno(id, salida);
-                    notificacion_lbl.Text = "Turno cerrado para " + InterfazDb.UsuarioGetNombre(id) + " a las " + salida.ToShortTimeString() + ".";
+                    notificacion_lbl.Text = "Turno cerrado para " + InterfazDb.UsuarioGetNombre(id) + " a las " + salida.ToShortTimeString();
+                    notificacion_tmr.Interval = 5000;
+                    notificacion_tmr.Start();
                     notificacion_pnl.Show();
                 }
                 catch (NoHayTurnoAbiertoException ex)
@@ -77,33 +88,47 @@ namespace CheckIn_Turnos
                 }
                 ActualizarTurnos();
             };
-            ErrorHandlerForUserInterface.intentar(cerrarTurno);
+            ErrorHandlerForGUI.intentar(cerrarTurno);
         }
         private void CambiarContraseña()
         {
             Action cambiarContraseña = () =>
             {
-                new CambioContraseñaForm(new IdentificacionForm("Cambio de Contraseña").ShowDialog(this)).ShowDialog();
+                int id = new IdentificacionForm("Cambio de Contraseña").ShowDialog(this, false);
+                new CambioContraseñaForm(id).ShowDialog(this,InterfazDb.UsuarioGetRequiereCambio(id));
+                InterfazDb.UsuarioSetRequiereCambio(id, false);
                 notificacion_lbl.Text = "Contraseña cambiada correctamente.";
+                notificacion_tmr.Interval = 5000;
+                notificacion_tmr.Start();
                 notificacion_pnl.Show();
             };
-            ErrorHandlerForUserInterface.intentar(cambiarContraseña);
+            ErrorHandlerForGUI.intentar(cambiarContraseña);
         }
         private void ActualizarTurnos()
         {
             Action actualizarTurnos = () =>
             {
                 turnos_lv.Items.Clear();
-                foreach (DataRow turnoRow in InterfazDb.getTurnosAbiertos().Rows)
+                foreach (DataRow turnoRow in InterfazDb.TurnosGetAbiertos().Rows)
                 {
                     ListViewItem lvi = new ListViewItem(turnoRow[1].ToString());
-                    lvi.SubItems.Add(Convert.ToDateTime(turnoRow[2]).ToLongTimeString().ToString());
-                    TimeSpan tiempoAbierto = DateTime.Now.Subtract(Convert.ToDateTime(turnoRow[2]));
-                    lvi.SubItems.Add(string.Format("{0:D1} h {1:D2} m", tiempoAbierto.Hours, tiempoAbierto.Minutes));
+                    DateTime inicio = Convert.ToDateTime(turnoRow[2]);
+                    TimeSpan tiempoAbierto = DateTime.Now.Subtract(inicio);
+                    if (tiempoAbierto < new TimeSpan(1, 0, 0, 0))
+                    {
+                        lvi.SubItems.Add(inicio.ToLongTimeString());
+                        lvi.SubItems.Add(string.Format("{0:D1} h {1:D2} m", tiempoAbierto.Hours, tiempoAbierto.Minutes));
+                    }
+                    else
+                    {
+                        lvi.SubItems.Add(inicio.ToShortDateString() + " " + inicio.ToShortTimeString());
+                        lvi.SubItems.Add(string.Format("{0:D1} dias, {0:D1} h {1:D2} m",tiempoAbierto.Days, tiempoAbierto.Hours, tiempoAbierto.Minutes));
+                    }
+                    lvi.Tag = turnoRow[0].ToString();
                     turnos_lv.Items.Add(lvi);
                 }
             };
-            ErrorHandlerForUserInterface.intentar(actualizarTurnos);
+            ErrorHandlerForGUI.intentar(actualizarTurnos);
             //HACK: esto no abre y ciera la conexion a la base de datos constatemente????
         }
        
@@ -116,34 +141,42 @@ namespace CheckIn_Turnos
             {
                 try
                 {
-                    new AdministracionForm(new IdentificacionForm().ShowDialog(this)).ShowDialog(this);
+                    new AdministracionForm(new IdentificacionForm("Administración").ShowDialog(this)).ShowDialog(this);
                     ActualizarTurnos();
                 }
-                catch (NoTienePermisosRequeridosException)
+                catch (NoTienePermisosRequeridosException ex)
                 {
-                    MessageBox.Show("Su usuario no tiene permisos para acceder a las funciones administrativas", "Administración", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);                
+                    MessageBox.Show(ex.Message, "Administración", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);                
                 }
             };
-            ErrorHandlerForUserInterface.intentar(showAdminForm);
+            ErrorHandlerForGUI.intentar(showAdminForm);
+        }
+
+        private void notificacion_tmr_Tick(object sender, EventArgs e)
+        {
+            notificacion_tmr.Stop();
+            notificacion_pnl.Hide();
         }
         private void horaYTurnosAbiertos_tmr_Tick(object sender, EventArgs e)
         {
             ActualizarHoraYTiempos();
-            notificacion_pnl.Hide();
-            ActualizarTurnos();
+            if (_actualizarTurnos)
+                ActualizarTurnos();
         }
         private void turnos_lv_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             ListViewHitTestInfo hit = turnos_lv.HitTest(e.Location);
             if (hit.Item != null)
-                CerrarTurno(hit.Item.Text);
+                CerrarTurno(hit.Item.Tag.ToString());
         }
         private void NotificacionIma_lbl_Click(object sender, EventArgs e)
         {
+            notificacion_tmr.Stop();
             notificacion_pnl.Hide();
         }
         private void notificacion_lbl_Click(object sender, EventArgs e)
         {
+            notificacion_tmr.Stop();
             notificacion_pnl.Hide();
         }
         private void abrirTurno_cmd_Click(object sender, EventArgs e)
@@ -158,6 +191,9 @@ namespace CheckIn_Turnos
         {
             CambiarContraseña();
         }
+
+
+
     }
 #endregion
 }

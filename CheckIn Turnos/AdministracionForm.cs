@@ -17,9 +17,10 @@ namespace CheckIn_Turnos
     {
         public AdministracionForm(int idUsuario)
         {
-            if (!InterfazDb.esAdmin(idUsuario)) throw new NoTienePermisosRequeridosException();
+            if (!InterfazDb.UsuarioGetAdmin(idUsuario)) throw new NoTienePermisosRequeridosException("Su usuario no tiene permisos para acceder a las funciones administrativas");
             InitializeComponent();
-            usuario_dgv.DataSource = InterfazDb.getUsuarios();
+            Configuracion_lkl.Text = "Ubicación App: " + Application.StartupPath;
+            usuario_dgv.DataSource = InterfazDb.UsuariosGetAll();
             usuario_dgv.Columns[0].Visible = false;
         }
 
@@ -30,22 +31,22 @@ namespace CheckIn_Turnos
                new UsuarioNuevoForm().ShowDialog(this);
                ActualizarUsuariosDatagrid();
            };
-            ErrorHandlerForUserInterface.intentar(nuevoUsuario);
+            ErrorHandlerForGUI.intentar(nuevoUsuario);
         }
 
         private void modificar_cmd_Click(object sender, EventArgs e)
         {
             Action modificarUsuario = () =>
             {
-                new UsuarioEditarForm(InterfazDb.getUsuarioId(usuario_dgv.SelectedRows[0].Cells[0].Value.ToString())).ShowDialog(this);
+                new UsuarioEditarForm(InterfazDb.UsuarioGetId(usuario_dgv.SelectedRows[0].Cells["usuario"].Value.ToString())).ShowDialog(this);
                 ActualizarUsuariosDatagrid();
             };
-            ErrorHandlerForUserInterface.intentar (modificarUsuario);
+            ErrorHandlerForGUI.intentar(modificarUsuario);
         }
 
         private void ActualizarUsuariosDatagrid()
         {
-            usuario_dgv.DataSource = InterfazDb.getUsuarios();
+            usuario_dgv.DataSource = InterfazDb.UsuariosGetAll();
         }
 
         private void eliminar_cmd_Click(object sender, EventArgs e)
@@ -55,10 +56,10 @@ namespace CheckIn_Turnos
                 //HACK: validar que no se trate de elimnar el mismo
                 Action EliminarUsuario = () =>
                 {
-                    InterfazDb.UsuariosEliminar(Convert.ToInt32(usuario_dgv.SelectedRows[0].Cells[0].Value));
+                    InterfazDb.UsuarioEliminar(Convert.ToInt32(usuario_dgv.SelectedRows[0].Cells[0].Value));
                     ActualizarUsuariosDatagrid();
                 };
-                ErrorHandlerForUserInterface.intentar(EliminarUsuario);
+                ErrorHandlerForGUI.intentar(EliminarUsuario);
             }
         }
         
@@ -89,42 +90,54 @@ namespace CheckIn_Turnos
             string _filtro = "WHERE (Usuarios.nombre LIKE '%" + nombre_txt.Text + "%')";
             if (desde_chk.Checked)
                 _filtro += " AND (Turnos.fechaInicio BETWEEN #" + fechaDesde_dtp.Value.ToString("yyyy/MM/dd hh:mm:ss") + "# AND #" + fechaHasta_dtp.Value.ToString("yyyy/MM/dd hh:mm:ss") + "#)";
-            Action cargarTurnos_dvg = () => { turnos_dgv.DataSource = InterfazDb.getTurnosCumplen(_filtro); };
-            ErrorHandlerForUserInterface.intentar(cargarTurnos_dvg);
+            Action cargarTurnos_dvg = () => { turnos_dgv.DataSource = InterfazDb.TurnosGetCumplen(_filtro); };
+            ErrorHandlerForGUI.intentar(cargarTurnos_dvg);
         }
 
         private void exportar_cmd_Click(object sender, EventArgs e)
         {
-            if (exportar_sfd.ShowDialog() == DialogResult.OK)
+            if (turnos_dgv.RowCount == 0)
             {
-                try
+                string msj;
+                if (nombre_txt.Text == "" && !desde_chk.Checked)
+                    msj = "Todavia no se han registrados turnos en el sistema. No información que exportar";
+                else
+                    msj = "No hay ningún turno en la lista para que pueda ser exportado." + Environment.NewLine + "Cambie los datos usados en la busqueda.";
+                MessageBox.Show(msj, "Exportar Turnos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (exportar_sfd.ShowDialog(this) == DialogResult.OK)
                 {
-                    StringBuilder sbCSV = new StringBuilder();
-                    int intColCount = turnos_dgv.ColumnCount;
-                    foreach (DataGridViewRow dr in turnos_dgv.Rows)
+                    try
                     {
-                        for (int x = 0; x < intColCount; x++)
+                        StringBuilder sbCSV = new StringBuilder();
+                        int intColCount = turnos_dgv.ColumnCount;
+                        foreach (DataGridViewRow dr in turnos_dgv.Rows)
                         {
-                            sbCSV.Append(dr.Cells[x].Value);
-                            if ((x + 1) != intColCount)
+                            for (int x = 0; x < intColCount; x++)
                             {
-                                sbCSV.Append(",");
+                                sbCSV.Append(dr.Cells[x].Value);
+                                if ((x + 1) != intColCount)
+                                {
+                                    sbCSV.Append(",");
+                                }
                             }
+                            sbCSV.Append("\n");
                         }
-                        sbCSV.Append("\n");
-                    }
 
-                
-                    StreamWriter objWriter = new StreamWriter(exportar_sfd.FileName, false);
-                    objWriter.WriteLine(sbCSV.ToString());
-                    objWriter.Close();
+
+                        StreamWriter objWriter = new StreamWriter(exportar_sfd.FileName, false);
+                        objWriter.WriteLine(sbCSV.ToString());
+                        objWriter.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        ErrorHandlerForGUI.TraceException(ex);
+                        MessageBox.Show("No se pudo guardar el archivo csv. " + ex.Message,"Exportar Turnos",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        exportar_sfd.ShowDialog(this);
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("No se pudo guardar el archivo csv." + ex.Message);
-                    //TODO: dejar contacia en el log.
-                }
-         
             }
         }
 
@@ -132,6 +145,13 @@ namespace CheckIn_Turnos
         {
             Close();
         }
+
+        private void Configuracion_lkl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start(Application.StartupPath);
+        }
+
+
 
 
             }

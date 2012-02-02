@@ -16,11 +16,6 @@ namespace CheckIn_Turnos
     {
         int _idUsuario = -1;
 
-        public IdentificacionForm()
-        {
-            InitializeComponent();
-        }
-
         public IdentificacionForm(string titulo)
         {
             InitializeComponent();
@@ -39,12 +34,17 @@ namespace CheckIn_Turnos
                 _idUsuario = InterfazDb.Identificar(usuario_txt.Text, contrasenia_txt.Text);
                 this.Close();
             }
-            catch (ParUsuarioContraseñaIncorrectoException)
+            catch (ParUsuarioContraseñaIncorrectoException ex)
             {
                 //informa err y limpia campos.
-                MessageBox.Show("Usuario y/o contraseña incorrecto. Intente nuevamente.", "Identificación de Usuario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ex.Message + "Intente nuevamente.", "Identificación de Usuario", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 usuario_txt.Focus();
                 contrasenia_txt.Text = "";
+            }
+            catch (UsuarioSuspendidoException ex)
+            {
+                MessageBox.Show(ex.Message, "Identificación de Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Close();
             }
         }
 
@@ -57,23 +57,26 @@ namespace CheckIn_Turnos
         /// <exception cref="System.FormatException"></exception>
         /// <exception cref="System.InvalidCastException"></exception>
         /// <exception cref="System.OverflowException"></exception>
-        public new int ShowDialog(IWin32Window owner)
+        public int ShowDialog(IWin32Window owner, bool permitirRequerirCambio = true)
         {
             base.ShowDialog(owner);
             if (_idUsuario == -1)
                 throw new UsuarioCancelaException();
             else
             {
-                if (InterfazDb.UsuarioGetRequiereCambio(_idUsuario))
-                    new CambioContraseñaForm(_idUsuario).showDialogRequerido(owner);
+                if (InterfazDb.UsuarioGetRequiereCambio(_idUsuario) && permitirRequerirCambio)
+                {
+                    new CambioContraseñaForm(_idUsuario).ShowDialogRequerido(owner);
+                    InterfazDb.UsuarioSetRequiereCambio(_idUsuario, false);
+                }
                 return _idUsuario;
             }
         }
 
-        public int ShowDialog(string usuarioDefault, IWin32Window owner)
+        public int ShowDialog(string usuarioDefault, IWin32Window owner, bool permitirRequerirCambio = true)
         {
             usuario_txt.Text = usuarioDefault;
-            return ShowDialog(owner);
+            return ShowDialog(owner, permitirRequerirCambio);
         }
     }
 }

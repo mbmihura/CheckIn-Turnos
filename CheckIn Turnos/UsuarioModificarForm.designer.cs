@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.cancelar_cmd = new System.Windows.Forms.Button();
             this.guardar_cmd = new System.Windows.Forms.Button();
             this.usuario_txt = new System.Windows.Forms.TextBox();
@@ -49,7 +50,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.usuarioValidacion_lbl = new System.Windows.Forms.Label();
             this.nombreValidacion_lbl = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.accion_pic)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -64,9 +65,10 @@
             this.cancelar_cmd.Name = "cancelar_cmd";
             this.cancelar_cmd.Padding = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.cancelar_cmd.Size = new System.Drawing.Size(96, 30);
-            this.cancelar_cmd.TabIndex = 7;
+            this.cancelar_cmd.TabIndex = 9;
             this.cancelar_cmd.Text = "Cancelar";
             this.cancelar_cmd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip.SetToolTip(this.cancelar_cmd, "Presione la tecla \'Esc\' para salir sin guardar.");
             this.cancelar_cmd.UseVisualStyleBackColor = true;
             this.cancelar_cmd.Click += new System.EventHandler(this.cancelar_cmd_Click);
             // 
@@ -78,9 +80,10 @@
             this.guardar_cmd.Name = "guardar_cmd";
             this.guardar_cmd.Padding = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.guardar_cmd.Size = new System.Drawing.Size(91, 30);
-            this.guardar_cmd.TabIndex = 6;
+            this.guardar_cmd.TabIndex = 8;
             this.guardar_cmd.Text = "Guardar";
             this.guardar_cmd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip.SetToolTip(this.guardar_cmd, "Presione la tecla Enter para guardar y salir.");
             this.guardar_cmd.UseVisualStyleBackColor = true;
             // 
             // usuario_txt
@@ -89,7 +92,7 @@
             this.usuario_txt.Name = "usuario_txt";
             this.usuario_txt.Size = new System.Drawing.Size(193, 20);
             this.usuario_txt.TabIndex = 2;
-            this.usuario_txt.TextChanged += new System.EventHandler(this.usuario_txt_TextChanged);
+            this.toolTip.SetToolTip(this.usuario_txt, "Ingrese el usuario (Debe ser único en el sistema).");
             // 
             // Label3
             // 
@@ -107,6 +110,7 @@
             this.contrasenia1_txt.Name = "contrasenia1_txt";
             this.contrasenia1_txt.Size = new System.Drawing.Size(126, 20);
             this.contrasenia1_txt.TabIndex = 3;
+            this.toolTip.SetToolTip(this.contrasenia1_txt, "Ingrese una contaseña para que el usuario se identifique.");
             this.contrasenia1_txt.UseSystemPasswordChar = true;
             this.contrasenia1_txt.TextChanged += new System.EventHandler(this.contrasenia1_txt_TextChanged);
             // 
@@ -117,6 +121,7 @@
             this.nombre_txt.Name = "nombre_txt";
             this.nombre_txt.Size = new System.Drawing.Size(193, 20);
             this.nombre_txt.TabIndex = 1;
+            this.toolTip.SetToolTip(this.nombre_txt, "Ingrese el nombre del usuario.");
             this.nombre_txt.TextChanged += new System.EventHandler(this.nombre_txt_TextChanged);
             // 
             // Label1
@@ -145,8 +150,9 @@
             this.admin_chk.Location = new System.Drawing.Point(226, 187);
             this.admin_chk.Name = "admin_chk";
             this.admin_chk.Size = new System.Drawing.Size(103, 17);
-            this.admin_chk.TabIndex = 4;
+            this.admin_chk.TabIndex = 7;
             this.admin_chk.Text = "Es administrador";
+            this.toolTip.SetToolTip(this.admin_chk, "Habilita al usuario a usar las funciones administrativas.");
             this.admin_chk.UseVisualStyleBackColor = true;
             // 
             // habilitado_chk
@@ -157,8 +163,9 @@
             this.habilitado_chk.Location = new System.Drawing.Point(137, 187);
             this.habilitado_chk.Name = "habilitado_chk";
             this.habilitado_chk.Size = new System.Drawing.Size(73, 17);
-            this.habilitado_chk.TabIndex = 5;
+            this.habilitado_chk.TabIndex = 6;
             this.habilitado_chk.Text = "Habilitado";
+            this.toolTip.SetToolTip(this.habilitado_chk, "Habilita al usuario para que pueda usar el sistema.");
             this.habilitado_chk.UseVisualStyleBackColor = true;
             // 
             // cambioRequerido_chk
@@ -166,8 +173,10 @@
             this.cambioRequerido_chk.Location = new System.Drawing.Point(311, 14);
             this.cambioRequerido_chk.Name = "cambioRequerido_chk";
             this.cambioRequerido_chk.Size = new System.Drawing.Size(177, 31);
-            this.cambioRequerido_chk.TabIndex = 38;
+            this.cambioRequerido_chk.TabIndex = 5;
             this.cambioRequerido_chk.Text = "Requerir cambio de contraseña en el proximo uso";
+            this.toolTip.SetToolTip(this.cambioRequerido_chk, "Obliga al usuario a tener que cambiar la contraseña por una diferente la próxima " +
+                    "vez que use el sistema.");
             this.cambioRequerido_chk.UseVisualStyleBackColor = true;
             // 
             // contrasenia2_txt
@@ -176,7 +185,8 @@
             this.contrasenia2_txt.Location = new System.Drawing.Point(120, 45);
             this.contrasenia2_txt.Name = "contrasenia2_txt";
             this.contrasenia2_txt.Size = new System.Drawing.Size(126, 20);
-            this.contrasenia2_txt.TabIndex = 39;
+            this.contrasenia2_txt.TabIndex = 4;
+            this.toolTip.SetToolTip(this.contrasenia2_txt, "Repita la contraseña ingresada.");
             this.contrasenia2_txt.UseSystemPasswordChar = true;
             this.contrasenia2_txt.TextChanged += new System.EventHandler(this.contrasenia2_txt_TextChanged);
             // 
@@ -191,6 +201,7 @@
             this.mostrarCaracteres_lnk.TabStop = true;
             this.mostrarCaracteres_lnk.Text = "Mostrar ";
             this.mostrarCaracteres_lnk.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolTip.SetToolTip(this.mostrarCaracteres_lnk, "Haga click para mostrar la contraseña que ingresó.");
             this.mostrarCaracteres_lnk.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.mostrarCaracteres_lnk_LinkClicked);
             // 
             // label5
@@ -259,7 +270,6 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.usuarioValidacion_lbl);
             this.panel1.Controls.Add(this.nombreValidacion_lbl);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.Label3);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.accion_pic);
@@ -298,15 +308,6 @@
             this.nombreValidacion_lbl.TabIndex = 49;
             this.nombreValidacion_lbl.Text = "El nombre no puede estar vacio.";
             this.nombreValidacion_lbl.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 48;
-            this.label2.Text = "label2";
             // 
             // UsuarioModificarForm
             // 
@@ -353,10 +354,10 @@
         protected internal System.Windows.Forms.Label label5;
         protected System.Windows.Forms.Panel panel1;
         protected System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label2;
         protected System.Windows.Forms.GroupBox groupBox1;
         protected System.Windows.Forms.Label contraseñaValidacion_lbl;
         protected System.Windows.Forms.Label usuarioValidacion_lbl;
         protected System.Windows.Forms.Label nombreValidacion_lbl;
+        protected System.Windows.Forms.ToolTip toolTip;
     }
 }

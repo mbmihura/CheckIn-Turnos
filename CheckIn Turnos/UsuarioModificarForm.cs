@@ -47,6 +47,7 @@ namespace CheckIn_Turnos
                 mostrarCaracteres_lnk.Text = "Mostrar";
                 contrasenia2_txt.Text = contrasenia1_txt.Text;
             }
+            validarContraseña(false);
         }
 
         protected bool validarNombre(bool pintarFondo) 
@@ -70,7 +71,7 @@ namespace CheckIn_Turnos
         /// <exception cref="System.FormatException"></exception>
         /// <exception cref="System.InvalidCastException"></exception>
         /// <exception cref="System.OverflowException"></exception>
-        protected bool validarUsuario(bool pintarFondo) 
+        protected bool validarUsuario(bool pintarFondo, string usuarioOriginal = "") 
         {
             try
             {
@@ -78,9 +79,14 @@ namespace CheckIn_Turnos
                 {
                     usuarioValidacion_lbl.Text = "El usuario no puede estar vacio.";    
                 }
+                else if (usuario_txt.Text == usuarioOriginal)
+                {
+                    throw new NoExisteUsuarioException();
+                }
                 else
                 {
-                    InterfazDb.getUsuarioId(usuario_txt.Text);
+                    InterfazDb.UsuarioGetId(usuario_txt.Text);
+                    usuarioValidacion_lbl.Text = "El usuario introducido ya exise.";   
                 }
                 usuarioValidacion_lbl.Show();
                 if (pintarFondo)
@@ -89,38 +95,40 @@ namespace CheckIn_Turnos
             }
             catch (NoExisteUsuarioException)
             {
-                nombreValidacion_lbl.Hide();
-                nombre_txt.BackColor = SystemColors.Window;
+                usuarioValidacion_lbl.Hide();
+                usuario_txt.BackColor = SystemColors.Window;
                 return true;
             }
         }
-        protected bool validarContraseña(bool pintarFondo) 
+        protected bool validarContraseña(bool pintarFondoYTab)
         {
             if ((_mostrandoContrasenia | contrasenia1_txt.Text == contrasenia2_txt.Text) && contrasenia1_txt.Text != "")
             {
-                nombreValidacion_lbl.Hide();
-                nombre_txt.BackColor = SystemColors.Window;
+                contraseñaValidacion_lbl.Hide();
+                contrasenia1_txt.BackColor = SystemColors.Window;
+                contrasenia2_txt.BackColor = contrasenia1_txt.BackColor;
                 return true;
             }
-            if (!_mostrandoContrasenia && contrasenia1_txt.Text != contrasenia2_txt.Text)
-                contraseñaValidacion_lbl.Text = "Las contraseñas no coinciden.";
             else
-                contraseñaValidacion_lbl.Text = "La contraseña no puede estar vacia.";
-            contrasenia1_txt.Focus();
-            contraseñaValidacion_lbl.Show();
-            if (pintarFondo)
-                usuario_txt.BackColor = Color.FromArgb(250, 234, 234);
-            return false;
+            {
+                if (!_mostrandoContrasenia && contrasenia1_txt.Text != contrasenia2_txt.Text)
+                    contraseñaValidacion_lbl.Text = "Las contraseñas no coinciden.";
+                else
+                    contraseñaValidacion_lbl.Text = "La contraseña no puede estar vacia.";
+                contraseñaValidacion_lbl.Show();
+                if (pintarFondoYTab)
+                {
+                    contrasenia1_txt.Focus();
+                    contrasenia1_txt.BackColor = Color.FromArgb(250, 234, 234);
+                    contrasenia2_txt.BackColor = contrasenia1_txt.BackColor;
+                }
+                return false;
+            }
         }
 
         private void nombre_txt_TextChanged(object sender, EventArgs e)
         {
             validarNombre(false);
-        }
-
-        private void usuario_txt_TextChanged(object sender, EventArgs e)
-        {
-            validarUsuario(false);
         }
 
         private void contrasenia2_txt_TextChanged(object sender, EventArgs e)
@@ -130,9 +138,10 @@ namespace CheckIn_Turnos
 
         private void contrasenia1_txt_TextChanged(object sender, EventArgs e)
         {
-            if (contrasenia2_txt.Text != "")
+            //if (contrasenia2_txt.Text != "") TODO: acomodar validacion contraseña
                 validarContraseña(false);
         }
+
     }
 }
         

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.TabControl1 = new System.Windows.Forms.TabControl();
             this.usuarios_tab = new System.Windows.Forms.TabPage();
             this.usuario_dgv = new System.Windows.Forms.DataGridView();
@@ -51,6 +52,7 @@
             this.salir_cmd = new System.Windows.Forms.Button();
             this.Configuracion_lkl = new System.Windows.Forms.LinkLabel();
             this.exportar_sfd = new System.Windows.Forms.SaveFileDialog();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.TabControl1.SuspendLayout();
             this.usuarios_tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuario_dgv)).BeginInit();
@@ -73,7 +75,7 @@
             this.TabControl1.Name = "TabControl1";
             this.TabControl1.SelectedIndex = 0;
             this.TabControl1.Size = new System.Drawing.Size(541, 339);
-            this.TabControl1.TabIndex = 7;
+            this.TabControl1.TabIndex = 1;
             this.TabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.nombreODesde_checkedChangedOCambioDeTab);
             // 
             // usuarios_tab
@@ -112,7 +114,7 @@
             this.usuario_dgv.RowHeadersVisible = false;
             this.usuario_dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.usuario_dgv.Size = new System.Drawing.Size(422, 278);
-            this.usuario_dgv.TabIndex = 10;
+            this.usuario_dgv.TabIndex = 2;
             // 
             // modificar_cmd
             // 
@@ -122,8 +124,9 @@
             this.modificar_cmd.Location = new System.Drawing.Point(431, 52);
             this.modificar_cmd.Name = "modificar_cmd";
             this.modificar_cmd.Size = new System.Drawing.Size(96, 25);
-            this.modificar_cmd.TabIndex = 5;
-            this.modificar_cmd.Text = "Modificar";
+            this.modificar_cmd.TabIndex = 4;
+            this.modificar_cmd.Text = "&Modificar";
+            this.toolTip1.SetToolTip(this.modificar_cmd, "Permite modificar el usuario seleccionado en la lista (Presione la tecla \'M\').");
             this.modificar_cmd.UseVisualStyleBackColor = true;
             this.modificar_cmd.Click += new System.EventHandler(this.modificar_cmd_Click);
             // 
@@ -135,8 +138,9 @@
             this.eliminar_cmd.Location = new System.Drawing.Point(431, 85);
             this.eliminar_cmd.Name = "eliminar_cmd";
             this.eliminar_cmd.Size = new System.Drawing.Size(96, 25);
-            this.eliminar_cmd.TabIndex = 4;
-            this.eliminar_cmd.Text = "Eliminar";
+            this.eliminar_cmd.TabIndex = 5;
+            this.eliminar_cmd.Text = "&Eliminar";
+            this.toolTip1.SetToolTip(this.eliminar_cmd, "Elimina el usuario seleccionado en la lista (Presione la tecla \'E\').");
             this.eliminar_cmd.UseVisualStyleBackColor = true;
             this.eliminar_cmd.Click += new System.EventHandler(this.eliminar_cmd_Click);
             // 
@@ -149,7 +153,8 @@
             this.nuevo_cmd.Name = "nuevo_cmd";
             this.nuevo_cmd.Size = new System.Drawing.Size(96, 25);
             this.nuevo_cmd.TabIndex = 3;
-            this.nuevo_cmd.Text = "Nuevo";
+            this.nuevo_cmd.Text = "&Nuevo";
+            this.toolTip1.SetToolTip(this.nuevo_cmd, "Crea un nuevo usuario en el sistema (Presione la tecla \'N\').");
             this.nuevo_cmd.UseVisualStyleBackColor = true;
             this.nuevo_cmd.Click += new System.EventHandler(this.nuevo_cmd_Click);
             // 
@@ -199,8 +204,10 @@
             this.exportar_cmd.Location = new System.Drawing.Point(421, 280);
             this.exportar_cmd.Name = "exportar_cmd";
             this.exportar_cmd.Size = new System.Drawing.Size(103, 24);
-            this.exportar_cmd.TabIndex = 10;
-            this.exportar_cmd.Text = "Exportar";
+            this.exportar_cmd.TabIndex = 12;
+            this.exportar_cmd.Text = "&Exportar";
+            this.toolTip1.SetToolTip(this.exportar_cmd, "Exporta los turnos mostrados en la lista a un archivo CVS (Presione la tecla \'E\')" +
+                    ".");
             this.exportar_cmd.UseVisualStyleBackColor = true;
             this.exportar_cmd.Click += new System.EventHandler(this.exportar_cmd_Click);
             // 
@@ -232,7 +239,8 @@
             this.nombre_txt.Location = new System.Drawing.Point(88, 6);
             this.nombre_txt.Name = "nombre_txt";
             this.nombre_txt.Size = new System.Drawing.Size(154, 20);
-            this.nombre_txt.TabIndex = 4;
+            this.nombre_txt.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.nombre_txt, "Ingrese un nombre por el cual buscar/filtrar la lista de turnos.");
             this.nombre_txt.TextChanged += new System.EventHandler(this.nombre_txt_TextChanged);
             // 
             // label1
@@ -274,7 +282,8 @@
             this.fechaHasta_dtp.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.fechaHasta_dtp.Name = "fechaHasta_dtp";
             this.fechaHasta_dtp.Size = new System.Drawing.Size(102, 20);
-            this.fechaHasta_dtp.TabIndex = 14;
+            this.fechaHasta_dtp.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.fechaHasta_dtp, "Fecha hasta la cual pueden comenzar los turnos a mostrar.");
             this.fechaHasta_dtp.ValueChanged += new System.EventHandler(this.fechaHasta_dtp_ValueChanged);
             // 
             // desde_chk
@@ -283,8 +292,10 @@
             this.desde_chk.Location = new System.Drawing.Point(7, 8);
             this.desde_chk.Name = "desde_chk";
             this.desde_chk.Size = new System.Drawing.Size(118, 17);
-            this.desde_chk.TabIndex = 10;
+            this.desde_chk.TabIndex = 8;
             this.desde_chk.Text = "Inicio turnos desde:";
+            this.toolTip1.SetToolTip(this.desde_chk, "Seleccione para mostrar los turnos que inician dentro de un rango de fechas espec" +
+                    "ifico.");
             this.desde_chk.UseVisualStyleBackColor = true;
             this.desde_chk.CheckedChanged += new System.EventHandler(this.nombreODesde_checkedChangedOCambioDeTab);
             // 
@@ -297,6 +308,7 @@
             this.fechaDesde_dtp.Name = "fechaDesde_dtp";
             this.fechaDesde_dtp.Size = new System.Drawing.Size(104, 20);
             this.fechaDesde_dtp.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.fechaDesde_dtp, "Fecha desde la cual puede comenzar los turnos a mostrar.");
             this.fechaDesde_dtp.ValueChanged += new System.EventHandler(this.fechaDesde_dtp_ValueChanged);
             // 
             // turnos_dgv
@@ -319,7 +331,7 @@
             this.turnos_dgv.ReadOnly = true;
             this.turnos_dgv.RowHeadersVisible = false;
             this.turnos_dgv.Size = new System.Drawing.Size(521, 201);
-            this.turnos_dgv.TabIndex = 9;
+            this.turnos_dgv.TabIndex = 11;
             // 
             // salir_cmd
             // 
@@ -328,23 +340,26 @@
             this.salir_cmd.Location = new System.Drawing.Point(12, 357);
             this.salir_cmd.Name = "salir_cmd";
             this.salir_cmd.Size = new System.Drawing.Size(89, 23);
-            this.salir_cmd.TabIndex = 8;
+            this.salir_cmd.TabIndex = 14;
             this.salir_cmd.Text = "Salir";
+            this.toolTip1.SetToolTip(this.salir_cmd, "Presione la tecla \'Esc\'.");
             this.salir_cmd.UseVisualStyleBackColor = true;
             this.salir_cmd.Click += new System.EventHandler(this.salir_cmd_Click);
             // 
             // Configuracion_lkl
             // 
-            this.Configuracion_lkl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Configuracion_lkl.AutoSize = true;
-            this.Configuracion_lkl.Location = new System.Drawing.Point(476, 16);
+            this.Configuracion_lkl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.Configuracion_lkl.AutoEllipsis = true;
+            this.Configuracion_lkl.Location = new System.Drawing.Point(107, 362);
             this.Configuracion_lkl.Name = "Configuracion_lkl";
-            this.Configuracion_lkl.Size = new System.Drawing.Size(72, 13);
-            this.Configuracion_lkl.TabIndex = 12;
+            this.Configuracion_lkl.Size = new System.Drawing.Size(446, 13);
+            this.Configuracion_lkl.TabIndex = 13;
             this.Configuracion_lkl.TabStop = true;
-            this.Configuracion_lkl.Text = "Configuración";
-            this.Configuracion_lkl.Visible = false;
+            this.Configuracion_lkl.Text = "Ubicación App";
+            this.Configuracion_lkl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Configuracion_lkl.VisitedLinkColor = System.Drawing.Color.Blue;
+            this.Configuracion_lkl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Configuracion_lkl_LinkClicked);
             // 
             // exportar_sfd
             // 
@@ -356,6 +371,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.salir_cmd;
             this.ClientSize = new System.Drawing.Size(565, 392);
             this.Controls.Add(this.Configuracion_lkl);
             this.Controls.Add(this.TabControl1);
@@ -376,7 +392,6 @@
             this.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.turnos_dgv)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -405,5 +420,6 @@
         private System.Windows.Forms.LinkLabel Configuracion_lkl;
         private System.Windows.Forms.SaveFileDialog exportar_sfd;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

@@ -23,14 +23,15 @@ namespace dbTurnos.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\"|DataDirectory|\\Bar Turnos.accdb\";" +
-            "Persist Security Info=True;Jet OLEDB:Database Password=We34*tr9")]
-        public string Bar_TurnosConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string dbTurnosConnectionString {
             get {
-                return ((string)(this["Bar_TurnosConnectionString"]));
+                return ((string)(this["dbTurnosConnectionString"]));
+            }
+            set {
+                this["dbTurnosConnectionString"] = value;
             }
         }
     }

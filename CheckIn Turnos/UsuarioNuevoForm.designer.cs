@@ -28,14 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-
             ((System.ComponentModel.ISupportInitialize)(this.accion_pic)).BeginInit();
             this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guardar_cmd
             // 
             this.guardar_cmd.Click += new System.EventHandler(this.guardar_cmd_Click);
+            // 
+            // cambioRequerido_chk
+            // 
+            this.cambioRequerido_chk.Checked = true;
+            this.cambioRequerido_chk.CheckState = System.Windows.Forms.CheckState.Checked;
             // 
             // accion_pic
             // 
@@ -55,10 +60,11 @@
             this.ClientSize = new System.Drawing.Size(597, 265);
             this.Name = "UsuarioNuevoForm";
             this.Text = "Usuario Nuevo";
-
             ((System.ComponentModel.ISupportInitialize)(this.accion_pic)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
