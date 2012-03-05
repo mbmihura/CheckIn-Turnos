@@ -29,23 +29,27 @@ namespace CheckIn_Turnos
         /// <exception cref="System.OverflowException"></exception>
         private void ingresar_cmd_Click(object sender, EventArgs e)
         {
-            try
+            Action a = () =>
             {
-                _idUsuario = InterfazDb.Identificar(usuario_txt.Text, contrasenia_txt.Text);
-                this.Close();
-            }
-            catch (ParUsuarioContraseñaIncorrectoException ex)
-            {
-                //informa err y limpia campos.
-                MessageBox.Show(ex.Message + "Intente nuevamente.", "Identificación de Usuario", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                usuario_txt.Focus();
-                contrasenia_txt.Text = "";
-            }
-            catch (UsuarioSuspendidoException ex)
-            {
-                MessageBox.Show(ex.Message, "Identificación de Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Close();
-            }
+                try
+                {
+                    _idUsuario = InterfazDb.Identificar(usuario_txt.Text, contrasenia_txt.Text);
+                    this.Close();
+                }
+                catch (ParUsuarioContraseñaIncorrectoException ex)
+                {
+                    //informa err y limpia campos.
+                    MessageBox.Show(ex.Message + "Intente nuevamente.", "Identificación de Usuario", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    usuario_txt.Focus();
+                    contrasenia_txt.Text = "";
+                }
+                catch (UsuarioSuspendidoException ex)
+                {
+                    MessageBox.Show(ex.Message, "Identificación de Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
+            };
+            ErrorHandlerForGUI.intentar(a);
         }
 
         /// <summary>Muestra la pantalla de forma modal para que el usuario se identifique.</summary>

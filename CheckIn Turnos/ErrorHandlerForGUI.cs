@@ -26,7 +26,7 @@ namespace CheckIn_Turnos
             catch (System.Data.OleDb.OleDbException ex)
             {
                 TraceException(ex, "App fin");
-                ShowMessageBox(ex, "Ocurrió un problema con la Base de Datos y no se puedo abrir la conexion con la misma. " + ex.Message, false);
+                ShowMessageBox(ex, "Ocurrió un problema con la Base de Datos y no se puedo abrir la conexion con la misma.");
             } 
             catch (InvalidOperationException ex)
             {
@@ -52,7 +52,7 @@ namespace CheckIn_Turnos
             catch (IndexOutOfRangeException ex)
             {
                 TraceException(ex, "App fin");
-                ShowMessageBox(ex, "Ocurrió un problema con la configuracion de la base de datos. " + ex.Message);
+                ShowMessageBox(ex, "Ocurrió un problema con la configuracion de la base de datos. ");
             }
             catch (Exception ex)
             {
@@ -78,13 +78,13 @@ namespace CheckIn_Turnos
                 _log.TraceException(ex, "ErrHandler4GUI");
             }
         }
-        internal static void ShowMessageBox(Exception ex, string msj = "Ocurrió un error que el programa no puede solucionar.", bool displayErrorType = true)
+        internal static void ShowMessageBox(Exception ex, string msj = "Ocurrió un error que el programa no puede solucionar.", bool displayErrorMsg = true)
         {
-            string errType = "";
-            TurnosForm.DetenerTimers = 
-            if (displayErrorType)
-                errType = "Tipo de error:" + ex.GetType();
-            if (DialogResult.Yes == MessageBox.Show(msj + errType + Environment.NewLine + Environment.NewLine + "El error se registró en el log, el programa se finalizará. ¿Desea reiniciarlo a continuación?", "Error con la Base De Datos", MessageBoxButtons.YesNo, MessageBoxIcon.Error,MessageBoxDefaultButton.Button2))
+            string errMsg = "";
+            TurnosForm.ActualizarTurnosAbiertos = false;
+            if (displayErrorMsg)
+                errMsg = ex.Message;
+            if (DialogResult.Yes == MessageBox.Show(msj + " "+ errMsg + Environment.NewLine + Environment.NewLine + "El error se registró en el log, el programa se finalizará. ¿Desea reiniciarlo a continuación?", "Error con la Base De Datos", MessageBoxButtons.YesNo, MessageBoxIcon.Error,MessageBoxDefaultButton.Button2))
                     Application.Restart();
                 else
                     Application.Exit();

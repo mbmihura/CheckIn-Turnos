@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1">
-  <asmv1:assemblyIdentity name="CheckIn Turnos.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
+  <asmv1:assemblyIdentity name="CheckIn Turnos.exe" version="1.0.0.4" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
   <description asmv2:iconFile="Turno.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -43,36 +43,36 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CheckIn Turnos.exe" size="89600">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CheckIn Turnos.exe" size="27048960">
       <assemblyIdentity name="CheckIn Turnos" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>YJRoyx/o9dTuS/rjPLAMKmaRYUI=</dsig:DigestValue>
+        <dsig:DigestValue>llaIyxhSn0gz5VroTtVCGnEjD1c=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="db -Turnos.dll" size="17920">
-      <assemblyIdentity name="db -Turnos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="db -Turnos" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>b/9DvJakRSc2htGiRxLGD0UA9ck=</dsig:DigestValue>
+        <dsig:DigestValue>nZYyOtGTxPIZwDcQw84LHBRTLhI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Bar Turnos.accdb" size="847872">
+  <file name="Bar Turnos.accdb" size="847872" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>w698/+4KZ2MdCkDsAGre4WOCC0A=</dsig:DigestValue>
+      <dsig:DigestValue>WGxObfO2w9RKXnp02Xuoeo/ldXU=</dsig:DigestValue>
     </hash>
   </file>
   <file name="CheckIn Turnos.exe.config" size="149">

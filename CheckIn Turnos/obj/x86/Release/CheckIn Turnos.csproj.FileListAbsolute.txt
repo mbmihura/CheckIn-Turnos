@@ -21,3 +21,26 @@ C:\Users\Martin\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Release\CheckIn 
 C:\Users\Martin\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Release\CheckIn Turnos.application
 C:\Users\Martin\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Release\CheckIn Turnos.exe
 C:\Users\Martin\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Release\CheckIn Turnos.pdb
+C:\Users\Martin\Desktop\Proyectos\CheckIn Turnos\CheckIn Turnos\bin\Release\CheckIn Turnos.exe.config
+C:\Users\Martin\Desktop\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Release\CheckIn Turnos.exe
+C:\Users\Martin\Desktop\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Release\CheckIn Turnos.pdb
+C:\Users\Martin\Desktop\Proyectos\CheckIn Turnos\CheckIn Turnos\bin\Release\Bar Turnos.accdb
+C:\Users\Martin\Desktop\Proyectos\CheckIn Turnos\CheckIn Turnos\bin\Release\CheckIn Turnos.exe.manifest
+C:\Users\Martin\Desktop\Proyectos\CheckIn Turnos\CheckIn Turnos\bin\Release\CheckIn Turnos.application
+C:\Users\Martin\Desktop\Proyectos\CheckIn Turnos\CheckIn Turnos\bin\Release\CheckIn Turnos.exe
+C:\Users\Martin\Desktop\Proyectos\CheckIn Turnos\CheckIn Turnos\bin\Release\CheckIn Turnos.pdb
+C:\Users\Martin\Desktop\Proyectos\CheckIn Turnos\CheckIn Turnos\bin\Release\db -Turnos.dll
+C:\Users\Martin\Desktop\Proyectos\CheckIn Turnos\CheckIn Turnos\bin\Release\db -Turnos.pdb
+C:\Users\Martin\Desktop\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\Martin\Desktop\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Release\CheckIn_Turnos.AdministracionForm.resources
+C:\Users\Martin\Desktop\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Release\CheckIn_Turnos.CambioContraseñaForm.resources
+C:\Users\Martin\Desktop\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Release\CheckIn_Turnos.IdentificacionForm.resources
+C:\Users\Martin\Desktop\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Release\CheckIn_Turnos.TurnosForm.resources
+C:\Users\Martin\Desktop\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Release\CheckIn_Turnos.Properties.Resources.resources
+C:\Users\Martin\Desktop\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Release\CheckIn_Turnos.UsuarioEditarForm.resources
+C:\Users\Martin\Desktop\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Release\CheckIn_Turnos.UsuarioModificarForm.resources
+C:\Users\Martin\Desktop\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Release\CheckIn_Turnos.UsuarioNuevoForm.resources
+C:\Users\Martin\Desktop\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Release\GenerateResource.read.1.tlog
+C:\Users\Martin\Desktop\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Release\GenerateResource.write.1.tlog
+C:\Users\Martin\Desktop\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Release\CheckIn Turnos.exe.manifest
+C:\Users\Martin\Desktop\Proyectos\CheckIn Turnos\CheckIn Turnos\obj\x86\Release\CheckIn Turnos.application

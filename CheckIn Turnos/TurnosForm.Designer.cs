@@ -239,6 +239,7 @@
             this.MinimumSize = new System.Drawing.Size(350, 279);
             this.Name = "TurnosForm";
             this.Text = "Gestión de Turnos";
+            this.Load += new System.EventHandler(this.TurnosForm_Load);
             this.Panel1.ResumeLayout(false);
             this.notificacion_pnl.ResumeLayout(false);
             this.ResumeLayout(false);

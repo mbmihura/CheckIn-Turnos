@@ -165,8 +165,8 @@
             this.cambioRequerido_lbl.Name = "cambioRequerido_lbl";
             this.cambioRequerido_lbl.Size = new System.Drawing.Size(284, 52);
             this.cambioRequerido_lbl.TabIndex = 18;
-            this.cambioRequerido_lbl.Text = "Debe cambiar su contraseña por una nueva antes de serguir utilizando el sistema, " +
-                "ya que uno de los administradores solicitó que se hiciera.";
+            this.cambioRequerido_lbl.Text = "Debe cambiar su contraseña por una nueva antes de seguir utilizando el sistema, y" +
+                "a que uno de los administradores solicitó que se hiciera.";
             this.cambioRequerido_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // cambioRequeridoIma_lbl

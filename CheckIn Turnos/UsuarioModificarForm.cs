@@ -73,32 +73,37 @@ namespace CheckIn_Turnos
         /// <exception cref="System.OverflowException"></exception>
         protected bool validarUsuario(bool pintarFondo, string usuarioOriginal = "") 
         {
+            //TODO:
+            // - MANEJO ERROR (no se realiza por que el metodo devuelve un bool, con la implementacion actual de 
+            //ErrorHandler4GUI.intentar() no funciona. podria crearse otro metodo intenetarReturnBool() para esto pero repetiria mucho codigo de manejo
+            //de error. investigar forma correcta, en facu no saben)
+            // - en la teoria el rendimiento no se deberia ver afectado, pero vigilarlo.
             try
-            {
-                if (usuario_txt.Text == "")
                 {
-                    usuarioValidacion_lbl.Text = "El usuario no puede estar vacio.";    
+                    if (usuario_txt.Text == "")
+                    {
+                        usuarioValidacion_lbl.Text = "El usuario no puede estar vacio.";
+                    }
+                    else if (usuario_txt.Text == usuarioOriginal)
+                    {
+                        throw new NoExisteUsuarioException();
+                    }
+                    else
+                    {
+                        InterfazDb.UsuarioGetId(usuario_txt.Text);
+                        usuarioValidacion_lbl.Text = "El usuario introducido ya exise.";
+                    }
+                    usuarioValidacion_lbl.Show();
+                    if (pintarFondo)
+                        usuario_txt.BackColor = Color.FromArgb(250, 234, 234);
+                    return false;
                 }
-                else if (usuario_txt.Text == usuarioOriginal)
+                catch (NoExisteUsuarioException)
                 {
-                    throw new NoExisteUsuarioException();
+                    usuarioValidacion_lbl.Hide();
+                    usuario_txt.BackColor = SystemColors.Window;
+                    return true;
                 }
-                else
-                {
-                    InterfazDb.UsuarioGetId(usuario_txt.Text);
-                    usuarioValidacion_lbl.Text = "El usuario introducido ya exise.";   
-                }
-                usuarioValidacion_lbl.Show();
-                if (pintarFondo)
-                    usuario_txt.BackColor = Color.FromArgb(250, 234, 234);
-                return false;
-            }
-            catch (NoExisteUsuarioException)
-            {
-                usuarioValidacion_lbl.Hide();
-                usuario_txt.BackColor = SystemColors.Window;
-                return true;
-            }
         }
         protected bool validarContraseña(bool pintarFondoYTab)
         {
@@ -138,7 +143,6 @@ namespace CheckIn_Turnos
 
         private void contrasenia1_txt_TextChanged(object sender, EventArgs e)
         {
-            //if (contrasenia2_txt.Text != "") TODO: acomodar validacion contraseña
                 validarContraseña(false);
         }
 

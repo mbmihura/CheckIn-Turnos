@@ -21,18 +21,23 @@ namespace CheckIn_Turnos
             _idUsuario = idUsuario;
             InitializeComponent();
 
-            nombre_txt.Text=InterfazDb.UsuarioGetNombre(_idUsuario);
-            _usuarioOriginal = InterfazDb.UsuarioGetUsuario(_idUsuario);
-            usuario_txt.Text = _usuarioOriginal;
-            cambioRequerido_chk.Checked = InterfazDb.UsuarioGetRequiereCambio(_idUsuario);
-            habilitado_chk.Checked = InterfazDb.UsuarioGetHabilitado(_idUsuario);
-            admin_chk.Checked = InterfazDb.UsuarioGetAdmin(_idUsuario);
+            Action a = () =>
+            {
+                nombre_txt.Text = InterfazDb.UsuarioGetNombre(_idUsuario);
+                _usuarioOriginal = InterfazDb.UsuarioGetUsuario(_idUsuario);
+                usuario_txt.Text = _usuarioOriginal;
+                cambioRequerido_chk.Checked = InterfazDb.UsuarioGetRequiereCambio(_idUsuario);
+                habilitado_chk.Checked = InterfazDb.UsuarioGetHabilitado(_idUsuario);
+                admin_chk.Checked = InterfazDb.UsuarioGetAdmin(_idUsuario);
+            };
+            ErrorHandlerForGUI.intentar(a);
         }
 
         private void guardar_cmd_Click(object sender, EventArgs e)
         {
-
-            if ((!_cambiaContraseña || validarContraseña(true)) & (validarUsuario(true,_usuarioOriginal)) & validarNombre(true))
+            Action a = () =>
+            {
+                if ((!_cambiaContraseña || validarContraseña(true)) & (validarUsuario(true,_usuarioOriginal)) & validarNombre(true))
                 {
                     if (!_cambiaContraseña)
                         InterfazDb.UsuarioEditar(_idUsuario, usuario_txt.Text, nombre_txt.Text, cambioRequerido_chk.Checked, habilitado_chk.Checked, admin_chk.Checked);
@@ -42,6 +47,8 @@ namespace CheckIn_Turnos
                 }
                 else 
                     MessageBox.Show("Los cambios realizados no se pueden guardar, revise los datos marcados en rojo.", "Falla Validación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            };
+            ErrorHandlerForGUI.intentar(a);
         }
         private void mostrarCambiarContraseña(bool mostrar)
         {
@@ -71,10 +78,7 @@ namespace CheckIn_Turnos
             validarUsuario(false,_usuarioOriginal);
         }
 
-        private void mostrarCaracteres_lnk_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
 
-        }
 
         
     }

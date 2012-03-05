@@ -45,38 +45,42 @@ namespace CheckIn_Turnos
 
         private void aceptar_cmd_Click(object sender, EventArgs e)
         {
-            //Cuando no se muestra la contraseña, validad que coincian antes de cambiarla
-            if (_mostrandoContrasenia || contrasenia1_txt.Text == contrasenia2_txt.Text) 
+            Action a = () =>
             {
-                if (!_contraseñaDebeDiferir | contrasenia1_txt.Text != InterfazDb.UsuarioGetContraseña(_idUsuario))
+                //Cuando no se muestra la contraseña, validad que coincian antes de cambiarla
+                if (_mostrandoContrasenia || contrasenia1_txt.Text == contrasenia2_txt.Text)
                 {
-                    try
+                    if (!_contraseñaDebeDiferir | contrasenia1_txt.Text != InterfazDb.UsuarioGetContraseña(_idUsuario))
                     {
-                        InterfazDb.CambiarContraseña(_idUsuario, contrasenia1_txt.Text);
-                        _cambioContraseña = true;
-                        this.Close();
+                        try
+                        {
+                            InterfazDb.CambiarContraseña(_idUsuario, contrasenia1_txt.Text);
+                            _cambioContraseña = true;
+                            this.Close();
+                        }
+                        catch (ContraseñaNoPuedeSerNula ex)
+                        {
+                            MessageBox.Show(ex.Message, "Falla Validación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
                     }
-                    catch (ContraseñaNoPuedeSerNula ex)
+                    else
                     {
-                        MessageBox.Show(ex.Message, "Falla Validación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        //informa err. y limpiar
+                        MessageBox.Show("La nueva contraseña no puede ser igual a la actual, introduzca una diferente.", "Falla Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        contrasenia1_txt.Text = "";
+                        contrasenia2_txt.Text = "";
                     }
                 }
                 else
                 {
                     //informa err. y limpiar
-                    MessageBox.Show("La nueva contraseña no puede ser igual a la actual, introduzca una diferente.", "Falla Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Las contraseñas no coinciden. Escribalas nuevamente.", "Falla Validación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     contrasenia1_txt.Text = "";
                     contrasenia2_txt.Text = "";
                 }
-            }
-            else 
-            {
-                //informa err. y limpiar
-                MessageBox.Show("Las contraseñas no coinciden. Escribalas nuevamente.", "Falla Validación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                contrasenia1_txt.Text = "";
-                contrasenia2_txt.Text = "";
-            }
-            contrasenia1_txt.Focus();
+                contrasenia1_txt.Focus();
+            };
+            ErrorHandlerForGUI.intentar(a);
         }
 
         //Alterna entre los modos mostrar contraseña y introducirla dos veces

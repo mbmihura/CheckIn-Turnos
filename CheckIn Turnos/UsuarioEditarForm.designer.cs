@@ -52,7 +52,6 @@
             this.mostrarCaracteres_lnk.TabIndex = 6;
             this.toolTip.SetToolTip(this.mostrarCaracteres_lnk, "Haga click para mostrar la contraseña que ingresó.");
             this.mostrarCaracteres_lnk.Visible = false;
-            this.mostrarCaracteres_lnk.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.mostrarCaracteres_lnk_LinkClicked);
             // 
             // repetirContraseña_lbl
             // 

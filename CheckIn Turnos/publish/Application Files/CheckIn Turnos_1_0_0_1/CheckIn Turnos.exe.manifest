@@ -43,36 +43,45 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CheckIn Turnos.exe" size="89600">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CheckIn Turnos.exe" size="90112">
       <assemblyIdentity name="CheckIn Turnos" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>YJRoyx/o9dTuS/rjPLAMKmaRYUI=</dsig:DigestValue>
+        <dsig:DigestValue>s05oLy5yPIZ8w6PKlp6Y5XkkTFo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="db -Turnos.dll" size="17920">
-      <assemblyIdentity name="db -Turnos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="db -Turnos" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>b/9DvJakRSc2htGiRxLGD0UA9ck=</dsig:DigestValue>
+        <dsig:DigestValue>aumJFmn9r/C9aBwy3M9CDc5e2A0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Bar Turnos.accdb" size="847872">
+  <file name="Bar Turnos.accdb" size="847872" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>w698/+4KZ2MdCkDsAGre4WOCC0A=</dsig:DigestValue>
+      <dsig:DigestValue>LNvNE6a5OovzQZ7HC1MIVyK3d6I=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Bar Turnos.mdb" size="405504">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>62qQ0541qON6OlvpgJziAjqr9jE=</dsig:DigestValue>
     </hash>
   </file>
   <file name="CheckIn Turnos.exe.config" size="149">
@@ -93,4 +102,4 @@
       <dsig:DigestValue>TRGiVJ8ZaPCwggTpCRJT/fdoGVA=</dsig:DigestValue>
     </hash>
   </file>
-<publisherIdentity name="CN=Martin-W7\Martin" issuerKeyHash="8675c327829263c5703413503f9d969ff311e850" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>/p2C/mn3zTu99SFY5FpopFLB7TI=</DigestValue></Reference></SignedInfo><SignatureValue>MFop5TcR5kuKhrqFZe8GZXMisXVtqx+pIOnNckZyHDb24lPE4yHJuYRx3PfU3iC7a0nKhpJEVo/lNcRJY4oJyf1IBNDRKMEIVaJcqBimrq7LNnJSF1R9WLcGFQ2tRKgpFoXerakmh447aXgcDlX5kbpnl2iGhOqjpkA3EvD2+JY=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>qrpkpKVBAXOCEltRhBD5/U7XdZlcMYxtbj7WLs4jteTq41UsVT+THPNC4cCr/5yatVtZ9+dDftC2ABGbNyKEuyRUevwgJdXIeomfqxcEYAG+3eWSgxmNr2uYNl25M/e1lluZwRkOd0oeLWOlryElsk6h4W6UM+AQbvyY0jObEbk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="32edc152a4685ae45821f5bd3bcdf769fe829dfe" Description="" Url=""><as:assemblyIdentity name="CheckIn Turnos.exe" version="1.0.0.1" publicKeyToken="a9640cdae965b7c9" language="neutral" processorArchitecture="x86" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=Martin-W7\Martin</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>Tn7G9u1sbs00dionOMT4Aa/LtmM=</DigestValue></Reference></SignedInfo><SignatureValue>lNm9FnHYvROTn6E7XS7B4IUNvxYTo8xw4FxfdJlnIGO8JgfOAJVrHZGMxCUiPB2a/V5IzcvGqTLUava1sj49j+ilqBWW9OyF/Is5CGXm74KSU2JxYQgE6dtO/mXTkbpTXh8WOgdKC4hohMzZo78H8P/6qiPnQ2hxZBqDf41CgWU=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>qrpkpKVBAXOCEltRhBD5/U7XdZlcMYxtbj7WLs4jteTq41UsVT+THPNC4cCr/5yatVtZ9+dDftC2ABGbNyKEuyRUevwgJdXIeomfqxcEYAG+3eWSgxmNr2uYNl25M/e1lluZwRkOd0oeLWOlryElsk6h4W6UM+AQbvyY0jObEbk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB2TCCAUKgAwIBAgIQKlQG521214xH7vg5JefZxDANBgkqhkiG9w0BAQUFADArMSkwJwYDVQQDHiAATQBhAHIAdABpAG4ALQBXADcAXABNAGEAcgB0AGkAbjAeFw0xMjAxMjcxNDQzMjhaFw0xMzAxMjYyMDQzMjhaMCsxKTAnBgNVBAMeIABNAGEAcgB0AGkAbgAtAFcANwBcAE0AYQByAHQAaQBuMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCqumSkpUEBc4ISW1GEEPn9Ttd1mVwxjG1uPtYuziO15OrjVSxVP5Mc80LhwKv/nJq1W1n350N+0LYAEZs3IoS7JFR6/CAl1ch6iZ+rFwRgAb7d5ZKDGY2va5g2Xbkz97WWW5nBGQ53Sh4tY6WvISWyTqHhbpQz4BBu/JjSM5sRuQIDAQABMA0GCSqGSIb3DQEBBQUAA4GBACng+kbvc7XptI3iS8yr3BUBieQ112WNdq+WuBX7tiC9espRlNTr8/pSzR38IMNNzefVYrZ7NIscO+azKxuUs4o8qMsCGuN0TNu8P22OT1HpmSOk08eYaEoxrfKIfhXqNXubfDC9GEMZPnUhV3pcvzcqLZMIDGPagAtPbNl0rGSI</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
+<publisherIdentity name="CN=Martin-W7\Martin" issuerKeyHash="8675c327829263c5703413503f9d969ff311e850" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>ee4JtwOfHliiM6p9Cj84jejaMyM=</DigestValue></Reference></SignedInfo><SignatureValue>B3f1afA1ijg+93hdvN6+/CoNu4uXveCRq9zRt6D2vmCX6xEfSYif6S4B2woV6vh/Ok6LS60ZoluCDpXprtgncEAM/FQTgkQ9jJcQkpkuunaIdF2Hw6PjcjUfR6MtcFuqvTbdHX6eVDaxlVGJ1NrayU3Qj80nAviE2BagF/Nl4sw=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>qrpkpKVBAXOCEltRhBD5/U7XdZlcMYxtbj7WLs4jteTq41UsVT+THPNC4cCr/5yatVtZ9+dDftC2ABGbNyKEuyRUevwgJdXIeomfqxcEYAG+3eWSgxmNr2uYNl25M/e1lluZwRkOd0oeLWOlryElsk6h4W6UM+AQbvyY0jObEbk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="2333dae88d383f0a7daa33a2581e9f03b709ee79" Description="" Url=""><as:assemblyIdentity name="CheckIn Turnos.exe" version="1.0.0.1" publicKeyToken="a9640cdae965b7c9" language="neutral" processorArchitecture="x86" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=Martin-W7\Martin</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>Yb/XUzSl2M2dAfedRRrnmJi/xq4=</DigestValue></Reference></SignedInfo><SignatureValue>AUmAHzi0fGWxvlvJQX9Z8gs0YTIhYxxhPVrfqstNMUN56On3ANS90eimsobC7JZwiyf9KUiVU3djK3PgANHTLGCofxNy+RKqqAMrqWfGNj0Xd/KJysLl9Pp61i0vQ64ZfKfqjK754c6TVe3kQ5O9fjS7TOlyTo22lzYWNQuG/Bs=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>qrpkpKVBAXOCEltRhBD5/U7XdZlcMYxtbj7WLs4jteTq41UsVT+THPNC4cCr/5yatVtZ9+dDftC2ABGbNyKEuyRUevwgJdXIeomfqxcEYAG+3eWSgxmNr2uYNl25M/e1lluZwRkOd0oeLWOlryElsk6h4W6UM+AQbvyY0jObEbk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB2TCCAUKgAwIBAgIQKlQG521214xH7vg5JefZxDANBgkqhkiG9w0BAQUFADArMSkwJwYDVQQDHiAATQBhAHIAdABpAG4ALQBXADcAXABNAGEAcgB0AGkAbjAeFw0xMjAxMjcxNDQzMjhaFw0xMzAxMjYyMDQzMjhaMCsxKTAnBgNVBAMeIABNAGEAcgB0AGkAbgAtAFcANwBcAE0AYQByAHQAaQBuMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCqumSkpUEBc4ISW1GEEPn9Ttd1mVwxjG1uPtYuziO15OrjVSxVP5Mc80LhwKv/nJq1W1n350N+0LYAEZs3IoS7JFR6/CAl1ch6iZ+rFwRgAb7d5ZKDGY2va5g2Xbkz97WWW5nBGQ53Sh4tY6WvISWyTqHhbpQz4BBu/JjSM5sRuQIDAQABMA0GCSqGSIb3DQEBBQUAA4GBACng+kbvc7XptI3iS8yr3BUBieQ112WNdq+WuBX7tiC9espRlNTr8/pSzR38IMNNzefVYrZ7NIscO+azKxuUs4o8qMsCGuN0TNu8P22OT1HpmSOk08eYaEoxrfKIfhXqNXubfDC9GEMZPnUhV3pcvzcqLZMIDGPagAtPbNl0rGSI</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

@@ -18,15 +18,12 @@ namespace CheckIn_Turnos
         public TurnosForm()
         {
             InitializeComponent();
-            ActualizarHoraYTiempos();
-            ActualizarTurnos();
+            
             
         }
 
-        public static bool DetenerTimers { set {
-            foreach TurnosForm tf in TurnosForm. 
-                ;
-                = !value; } }
+        public static bool ActualizarTurnosAbiertos { set {
+            _actualizarTurnos = value; } }
 
 #region Funcionales (Sin manejo de excepciones)
 
@@ -141,7 +138,8 @@ namespace CheckIn_Turnos
             {
                 try
                 {
-                    new AdministracionForm(new IdentificacionForm("Administración").ShowDialog(this)).ShowDialog(this);
+                    int i = new IdentificacionForm("Administración").ShowDialog(this);
+                    new AdministracionForm(i).ShowDialog(this);
                     ActualizarTurnos();
                 }
                 catch (NoTienePermisosRequeridosException ex)
@@ -192,6 +190,13 @@ namespace CheckIn_Turnos
             CambiarContraseña();
         }
 
+        private void TurnosForm_Load(object sender, EventArgs e)
+        {
+            ActualizarHoraYTiempos();
+            ActualizarTurnos();
+        }
+
+    
 
 
     }
